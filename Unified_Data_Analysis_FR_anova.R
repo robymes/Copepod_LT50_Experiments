@@ -37,16 +37,32 @@ survival_func <- function(x, y) {
 # Directories where to scan for csv data
 dir_paths = list(
   "data/spedizione/tubeworms _mussels/Oxic Pressure", 
-  "data/spedizione/chimney/Oxic Pressure")
+  "data/spedizione/chimney/Oxic Pressure"
+  #"data/nioz"
+)
+
+# params start values for nls model (must be the same element numbers as dir_paths)
+nls_param_list <- list(
+  list(100, 30, 4),
+  list(100, 30, 4)
+  #list(0.5, 33, 77)
+)
 
 # Initialize dataframes for ANOVA analysis 
 # Dataframe for LD50
 anova_data = data.frame(LD50 = numeric(0), time_list = numeric(0), dir = character((0)))
 # Dataframe for linear regression params
 anova_slopes <- data.frame(slope = numeric(0), intercept = numeric(0), dir = character(0))
+# Dataframe for T test
+t_test_data <- data.frame(slope = numeric(0), slope_std_err = numeric(0),
+  intercept = numeric(0), intercept_std_err = numeric(0), data_points_length = numeric(0),
+  dir = character(0))
 
+k = 0
 # Iterate over directories
+k = 0
 for (dir_path in dir_paths){
+  k = k + 1
   # Get a list of all files in the directory
   csv_files <- list.files(path = dir_path)
   
@@ -108,9 +124,9 @@ for (dir_path in dir_paths){
     data$Survival = data$Alive / (data$Alive + data$Dead)
     
     # Initialize regression params
-    p1_start = 100
-    p2_start = 30
-    p3_start = 4
+    p1_start = nls_param_list[[k]][[1]]
+    p2_start = nls_param_list[[k]][[2]]
+    p3_start = nls_param_list[[k]][[3]]
     xdata<-data[,1]
     ydata<-data[,4]
     # Execute regression
@@ -166,8 +182,18 @@ for (dir_path in dir_paths){
   TDT_results <- lm(LT50$LD50 ~ log10(LT50$time_list), data = LT50)
   TDT_slope <- TDT_results$coefficients["log10(LT50$time_list)"]
   TDT_intercept <- TDT_results$coefficients["(Intercept)"]
+  
   new_anova_element <- data.frame(slope = TDT_slope, intercept = TDT_intercept, dir = dir_path)
   anova_slopes <- rbind(anova_slopes, new_anova_element)
+  
+  new_t_test_data <- data.frame(
+    slope = summary(TDT_results)$coefficients[2, 1],
+    slope_std_err = summary(TDT_results)$coefficients[2, 2],
+    intercept = summary(TDT_results)$coefficients[1, 1], 
+    intercept_std_err = summary(TDT_results)$coefficients[1, 2], 
+    data_points_length = length(LT50_temp$time_list),
+    dir = dir_path)
+  t_test_data <- rbind(t_test_data, new_t_test_data)
   
   # Parameter used in 3D plot
   paramZ = TDT_slope
@@ -215,3 +241,15 @@ for (i in 1:nrow(anova_slopes)){
 print(anova_plot)
 print("ANOVA verification")
 anova(lm(LD50~log(time_list)*dir, anova_data))
+
+######################################################################################
+# T test slope
+t_value <- (t_test_data$slope[1] - t_test_data$slope[2]) / sqrt(t_test_data$slope_std_err[1]^2 + t_test_data$slope_std_err[2]^2)
+df_value <- (t_test_data$slope_std_err[1]^2 + t_test_data$slope_std_err[2]^2)^2 / (t_test_data$slope_std_err[1]^4 / (t_test_data$data_points_length[1] - 2) + t_test_data$slope_std_err[2]^4 / (t_test_data$data_points_length[2] - 2))
+p_value <- 2 * (1 - pt(abs(t_value), df_value))
+print(paste("P Value slopes: ", p_value))
+
+t_value <- (t_test_data$intercept[1] - t_test_data$intercept[2]) / sqrt(t_test_data$intercept_std_err[1]^2 + t_test_data$intercept_std_err[2]^2)
+df_value <- (t_test_data$intercept_std_err[1]^2 + t_test_data$intercept_std_err[2]^2)^2 / (t_test_data$intercept_std_err[1]^4 / (t_test_data$data_points_length[1] - 2) + t_test_data$intercept_std_err[2]^4 / (t_test_data$data_points_length[2] - 2))
+p_value <- 2 * (1 - pt(abs(t_value), df_value))
+print(paste("P Value intercept: ", p_value))

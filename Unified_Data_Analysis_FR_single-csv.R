@@ -8,7 +8,8 @@ min_temperature = 0
 lines_color <- c("green", "red", "blue", "orange", "purple")
 i = 2
 
-path <- "D:/Docs/RStudio/Test-R/data/spedizione/chimney/Oxic Pressure/Data10.csv"
+#path <- "data/spedizione/chimney/Oxic Pressure/Data10.csv"
+path <- "data/nioz/Data03.csv"
 data <- read.csv(path, row.names = NULL)
 data$Survival = data$Alive / (data$Alive + data$Dead)
 data_ordered <- data[order(data$Temperature), ]
@@ -32,9 +33,9 @@ plot(1,
 )
 points(xdata, ydata, col = lines_color[i])
 
-start_p1 = 100
-start_p2 = 30
-start_p3 = 40
+start_p1 = 0.5
+start_p2 = 33
+start_p3 = 77
 fit = nls(ydata ~ p1 / (1 + (xdata / p2) ^ p3), 
   start = list(p1 = start_p1, p2 = start_p2, p3 = start_p3),
   control = nls.control(maxiter = 500))
