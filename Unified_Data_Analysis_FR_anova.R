@@ -36,8 +36,9 @@ survival_func <- function(x, y) {
 
 # Directories where to scan for csv data
 dir_paths = list(
-  "data/spedizione/tubeworms _mussels/Oxic Pressure", 
-  "data/spedizione/chimney/Oxic Pressure"
+  "data/spedizione/tubeworms_mussels/Oxic Pressure", 
+  "data/spedizione/chimney/Oxic Pressure - No10"
+  #"data/spedizione/chimney/Oxic Pressure"
   #"data/nioz"
 )
 
@@ -129,7 +130,11 @@ for (dir_path in dir_paths){
     p3_start = nls_param_list[[k]][[3]]
     xdata<-data[,1]
     ydata<-data[,4]
-    # Execute regression
+    print(" ")
+    print("########### Non-Linear Regression ###########")
+    print(paste("Sample data: ", csv_path))
+    print(" ")
+    # Execute non-linear regression
     fit = nls(ydata ~ p1 / (1 + (xdata / p2) ^ p3), start=list(p1 = p1_start, p2 = p2_start, p3 = p3_start),
       control = nls.control(maxiter = 500))
     
@@ -147,6 +152,12 @@ for (dir_path in dir_paths){
     
     # Add the model_dose value to the LD50 list
     LD50 = c(LD50, fit_params$parameters[2])
+    
+    # R squared calculation for fit model
+    rss <- sum(residuals(fit)^2)
+    tss <- sum((ydata - mean(ydata))^2)
+    r_squared <- 1 - (rss / tss)
+    print(paste("R squared for fit model: ", r_squared))
   }
   
   #Add a legend to the plot
@@ -167,6 +178,11 @@ for (dir_path in dir_paths){
   #######################################################################################################################
   
   # Create the Thermal death time curve (TDT) plot
+  
+  print(" ")
+  print("########### Linear Regression ###########")
+  print(paste("Sample data: ", dir_path))
+  print(" ")
   
   # Create a data frame with LD50 and LT50 to construct TDT curve
   LT50 <- data.frame(LD50, time_list)
