@@ -117,26 +117,24 @@ for (csv_file in csv_files) {
   model_dose_stderr <- fit_params$parameters[2, 2]
   lines(new$xdata, predict(fit, newdata = new), col = lines_color[i])
   points(xdata, ydata, col = lines_color[i])
-  lines(jitter(data$Temperature, factor = 0.5),
-    (data$Alive / (data$Alive + data$Dead)),
-    text(x = rounded_dose,
-      y = model_dose_y,
-      labels = sprintf("%.2f°C", model_dose),
-      pos = cos(pi * i) + 2,
-      cex = 0.8
-    ),
-    las = 1,
-    col = lines_color[i]
+  text(
+    x = rounded_dose,
+    y = model_dose_y,
+    labels = sprintf("%.2f°C", model_dose),
+    pos = cos(pi * i) + 2,
+    cex = 0.8
   )
   # Adding flex points
-  points(x = model_dose,
+  points(
+    x = model_dose,
     y = model_dose_y,
     type = "p",
     pch = 19,
     col = lines_color[i]
   )
   # Adding std error ranges
-  arrows(x0 = model_dose - model_dose_stderr,
+  arrows(
+    x0 = model_dose - model_dose_stderr,
     y0 = model_dose_y,
     x1 = model_dose + model_dose_stderr,
     y1 = model_dose_y,
