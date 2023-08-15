@@ -148,15 +148,48 @@ for (dir_path in dir_paths) {
 
     # Syntetic dataframe initialization to plot distrubution line
     new <- data.frame(xdata = seq(min(xdata), max(xdata), len = 200))
-    lines(new$xdata, predict(fit, newdata = new), col = lines_color[i])
-    # Adding real points
-    points(xdata, ydata, col = lines_color[i])
 
     # The summary() function gives important info for statistical analysis
     cat("Summary statistics for ", time_list[i], "h exposure\n")
     fit_params <- summary(fit)
     print(summary(fit))
     cat("\n")
+
+    # Plot non-linear chart
+    model_dose <- fit_params$parameters[2]
+    rounded_dose <- round(model_dose, digits = 2)
+    model_dose_y <- predict(fit, newdata = data.frame(xdata = model_dose))
+    model_dose_stderr <- fit_params$parameters[2, 2]
+    lines(new$xdata, predict(fit, newdata = new), col = lines_color[i])
+    points(xdata, ydata, col = lines_color[i])
+    lines(jitter(data$Temperature, factor = 0.5),
+      (data$Alive / (data$Alive + data$Dead)),
+      text(x = rounded_dose,
+        y = model_dose_y,
+        labels = sprintf("%.2f°C", model_dose),
+        pos = cos(pi * i) + 2,
+        cex = 0.8
+      ),
+      las = 1,
+      col = lines_color[i]
+    )
+    # Adding flex points
+    points(x = model_dose,
+      y = model_dose_y,
+      type = "p",
+      pch = 19,
+      col = lines_color[i]
+    )
+    # Adding std error ranges
+    arrows(x0 = model_dose - model_dose_stderr,
+      y0 = model_dose_y,
+      x1 = model_dose + model_dose_stderr,
+      y1 = model_dose_y,
+      code = 3,
+      angle = 90,
+      length = 0.05,
+      col = lines_color[i]
+    )
 
     # Add the model_dose value to the LD50 list
     ld50 <- c(ld50, fit_params$parameters[2])
