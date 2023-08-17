@@ -1,3 +1,8 @@
+if (!require("stringr")) {
+  install.packages("stringr")
+  library(stringr)
+}
+
 if (!require("plotly")) {
   install.packages("plotly")
   library(plotly)
@@ -8,8 +13,13 @@ min_temperature <- 0
 lines_color <- c("green", "red", "blue", "orange", "purple")
 i <- 2
 
-# path <- "data/spedizione/chimney/Oxic Pressure/Data10.csv"
-path <- "data/nioz/Data03.csv"
+path <- "data/spedizione/chimney/Oxic Pressure/Data08.csv"
+chart_subtitle_parts <- unlist(strsplit(path, "/"))
+chart_subtitle <- paste(
+  chart_subtitle_parts[(length(chart_subtitle_parts) - 2):length(chart_subtitle_parts)],
+  collapse = "/"
+)
+#path <- "data/nioz/Data03.csv"
 data <- read.csv(path, row.names = NULL)
 data$Survival <- data$Alive / (data$Alive + data$Dead)
 data_ordered <- data[order(data$Temperature), ]
@@ -29,7 +39,7 @@ plot(1,
   ylim = c(0.0, 1.0),
   xlab = "Temperature (°C)",
   ylab = "Proportional Survival",
-  main = "LT50 Survival Curve"
+  main = paste("LT50 Survival Curve\n", chart_subtitle)
 )
 
 start_p1 <- 0.5
@@ -50,7 +60,7 @@ rounded_dose <- round(model_dose, digits = 2)
 model_dose_y <- predict(fit, newdata = data.frame(xdata = model_dose))
 model_dose_stderr <- fit_params$parameters[2, 2]
 lines(new$xdata, predict(fit, newdata = new), col = lines_color[i])
-points(xdata, ydata, col = lines_color[i])
+points(jitter(xdata, factor = 0.5), ydata, col = lines_color[i])
 text(
   x = rounded_dose,
   y = model_dose_y,

@@ -16,7 +16,7 @@ if (!require("plotly")) {
 }
 
 # Specify the directory
-dir_path <- "data/spedizione/tubeworms_mussels/Oxic Pressure"
+dir_path <- "data/spedizione/chimney/Oxic Pressure - No10"
 
 # Get a list of all files in the directory
 csv_files <- list.files(path = dir_path)
@@ -70,7 +70,7 @@ plot(1,
   ylim = c(0.0, 1.0),
   xlab = "Temperature (°C)",
   ylab = "Proportional Survival",
-  main = "LT50 Survival Curve"
+  main = paste("LT50 Survival Curve\n", dir_path)
 )
 
 # Assign a color to each data set
@@ -116,7 +116,7 @@ for (csv_file in csv_files) {
   model_dose_y <- predict(fit, newdata = data.frame(xdata = model_dose))
   model_dose_stderr <- fit_params$parameters[2, 2]
   lines(new$xdata, predict(fit, newdata = new), col = lines_color[i])
-  points(xdata, ydata, col = lines_color[i])
+  points(jitter(xdata, factor = 0.5), ydata, col = lines_color[i])
   text(
     x = rounded_dose,
     y = model_dose_y,
@@ -166,7 +166,9 @@ legend("topright",
   inset = 0.02,
   legend = exposures,
   col = lines_color,
-  lty = 1, lwd = 3, cex = 0.9
+  lty = 1,
+  lwd = 2,
+  cex = 0.7
 )
 
 # Create the Thermal death time curve (TDT) plot
@@ -252,7 +254,7 @@ fig <- plot_ly(
 fig <- fig %>% layout(
   scene = list(
     xaxis = list(nticks = 5),
-    zaxis = list(nticks = 20),
+    zaxis = list(nticks = 5),
     camera = list(eye = list(x = 0, y = -1, z = 0.5)),
     aspectratio = list(x = .8, y = .9, z = 0.5)
   )
