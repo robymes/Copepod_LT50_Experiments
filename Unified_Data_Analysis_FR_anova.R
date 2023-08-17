@@ -18,13 +18,6 @@ if (!require("plotly")) {
 source("chart_subtitle.R")
 source("non_linear_regression.R")
 source("linear_regression.R")
-source("anova_analysis.R")
-
-# Define the functions necessary to fit the data to the desired distribution
-logistic_line <- function(x, model_intercept, model_slope) {
-  eta <- model_intercept + model_slope * x
-  return(1 / (1 + exp(-eta)))
-}
 
 # Directories where to scan for csv data
 dir_paths <- list(
@@ -35,15 +28,13 @@ dir_paths <- list(
   #"data/nioz"
 )
 
+########### ATTENTION!!!!!!! ##########
 # params start values for nls model (must be the same element numbers as dir_paths)
 nls_param_list <- list(
   list(100, 30, 4),
   list(100, 30, 4)
   # list(0.5, 33, 77)
 )
-
-# Check if dir_paths and nls_param_list are the same length
-#stopifnot(length(dir_paths) == length(nls_param_list), "dir_paths and nls_param_list are not the same length!")
 
 anova_data <- data.frame()
 anova_slopes <- data.frame()
@@ -53,7 +44,7 @@ k <- 0
 for (dir_path in dir_paths) {
   k <- k + 1
   chart_subtitle <- chart_subtitle_func(dir_path)
-  non_linear_regression_result <- non_linear_regression_func(
+  non_linear_regression_result <- non_linear_regression_dir_func(
     dir_path = dir_path,
     nls_param_list = nls_param_list,
     k = k,

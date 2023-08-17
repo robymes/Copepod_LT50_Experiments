@@ -44,7 +44,7 @@ linear_regression_func <- function(dir_path, ld50, time_list, chart_subtitle) {
   # Create a data frame with LD50 and LT50 to construct TDT curve
   lt50 <- data.frame(ld50, time_list)
   lt50_temp <- lt50
-  lt50_temp$dir <- dir_path
+  lt50_temp$dir <- chart_subtitle
   anova_data <- rbind(anova_data, lt50_temp)
   cat("LD50 values and corresponding LT50 exposure values\n")
   print(lt50)
@@ -58,7 +58,7 @@ linear_regression_func <- function(dir_path, ld50, time_list, chart_subtitle) {
   new_anova_element <- data.frame(
     slope = tdt_slope,
     intercept = tdt_intercept_hours,
-    dir = dir_path
+    dir = chart_subtitle
   )
   anova_slopes <- rbind(anova_slopes, new_anova_element)
 
@@ -98,7 +98,8 @@ linear_regression_func <- function(dir_path, ld50, time_list, chart_subtitle) {
   return(list(
     anova_data = anova_data,
     anova_slopes = anova_slopes,
-    t_test_data = t_test_data
+    t_test_data = t_test_data,
+    survival_param_z = tdt_slope
   ))
 }
 
@@ -119,7 +120,7 @@ anova_analysis <- function(anova_data, anova_slopes) {
       y = "Temperature (LD50, °C)",
       title = "Thermal death time (TDT) Curve"
     ) +
-    scale_color_discrete(name = "dir")
+    scale_color_discrete(name = "Sample")
   for (i in 1:nrow(anova_slopes)) { # nolint: seq_linter.
     z <- seq(0, 2, 0.01)
     anova_slope_data <- tdt_line_func(anova_slopes[i, "slope"], anova_slopes[i, "intercept"], z)
@@ -142,7 +143,7 @@ t_test_func <- function(t_test_data) {
   df_value_slope <-
     (t_test_data$slope_std_err[1]^2 + t_test_data$slope_std_err[2]^2)^2 /
     (t_test_data$slope_std_err[1]^4 / (t_test_data$data_points_length[1] - 2) +
-    t_test_data$slope_std_err[2]^4 / (t_test_data$data_points_length[2] - 2))
+     t_test_data$slope_std_err[2]^4 / (t_test_data$data_points_length[2] - 2))
   p_value_slope <- 2 * (1 - pt(abs(t_value_slope), df_value_slope))
 
   t_value_intercept <-
@@ -151,7 +152,7 @@ t_test_func <- function(t_test_data) {
   df_value_intercept <-
     (t_test_data$intercept_std_err[1]^2 + t_test_data$intercept_std_err[2]^2)^2 /
     (t_test_data$intercept_std_err[1]^4 / (t_test_data$data_points_length[1] - 2) +
-    t_test_data$intercept_std_err[2]^4 / (t_test_data$data_points_length[2] - 2))
+     t_test_data$intercept_std_err[2]^4 / (t_test_data$data_points_length[2] - 2))
   p_value_intercept <- 2 * (1 - pt(abs(t_value_intercept), df_value_intercept))
   cat("########## T TEST ##########\n\n")
   cat("P Value slopes: ", p_value_slope, "\n")
