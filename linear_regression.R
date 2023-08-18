@@ -60,7 +60,7 @@ linear_regression_func <- function(dir_path, ld50, time_list, chart_subtitle) {
     intercept = tdt_intercept_hours,
     dir = chart_subtitle
   )
-  anova_slopes <- rbind(anova_slopes, new_anova_element)
+  #anova_slopes <- rbind(anova_slopes, new_anova_element)
 
   new_t_test_data <- data.frame(
     slope = summary(tdt_results_hours)$coefficients[2, 1],
@@ -70,7 +70,7 @@ linear_regression_func <- function(dir_path, ld50, time_list, chart_subtitle) {
     data_points_length = length(lt50_temp$time_list),
     dir = dir_path
   )
-  t_test_data <- rbind(t_test_data, new_t_test_data)
+  #t_test_data <- rbind(t_test_data, new_t_test_data)
 
   # Create plot with LD50/LT50 values in log-scale
   plot(log10(lt50$time_list), lt50$ld50,
@@ -97,8 +97,8 @@ linear_regression_func <- function(dir_path, ld50, time_list, chart_subtitle) {
   cat("TDT intercept in minutes: ", tdt_intercept_minutes, "\n\n")
   return(list(
     anova_data = anova_data,
-    anova_slopes = anova_slopes,
-    t_test_data = t_test_data,
+    anova_slopes = new_anova_element,
+    t_test_data = new_t_test_data,
     survival_param_z = tdt_slope
   ))
 }
@@ -137,24 +137,29 @@ anova_analysis <- function(anova_data, anova_slopes) {
 
 t_test_func <- function(t_test_data) {
   # T test slope
-  t_value_slope <-
-    (t_test_data$slope[1] - t_test_data$slope[2]) /
-    sqrt(t_test_data$slope_std_err[1]^2 + t_test_data$slope_std_err[2]^2)
-  df_value_slope <-
-    (t_test_data$slope_std_err[1]^2 + t_test_data$slope_std_err[2]^2)^2 /
-    (t_test_data$slope_std_err[1]^4 / (t_test_data$data_points_length[1] - 2) +
-     t_test_data$slope_std_err[2]^4 / (t_test_data$data_points_length[2] - 2))
-  p_value_slope <- 2 * (1 - pt(abs(t_value_slope), df_value_slope))
+  if (length(t_test_data$slope) == 2) {
+    t_value_slope <-
+      (t_test_data$slope[1] - t_test_data$slope[2]) /
+      sqrt(t_test_data$slope_std_err[1]^2 + t_test_data$slope_std_err[2]^2)
+    df_value_slope <-
+      (t_test_data$slope_std_err[1]^2 + t_test_data$slope_std_err[2]^2)^2 /
+      (t_test_data$slope_std_err[1]^4 / (t_test_data$data_points_length[1] - 2) +
+       t_test_data$slope_std_err[2]^4 / (t_test_data$data_points_length[2] - 2))
+    p_value_slope <- 2 * (1 - pt(abs(t_value_slope), df_value_slope))
 
-  t_value_intercept <-
-    (t_test_data$intercept[1] - t_test_data$intercept[2]) /
-    sqrt(t_test_data$intercept_std_err[1]^2 + t_test_data$intercept_std_err[2]^2)
-  df_value_intercept <-
-    (t_test_data$intercept_std_err[1]^2 + t_test_data$intercept_std_err[2]^2)^2 /
-    (t_test_data$intercept_std_err[1]^4 / (t_test_data$data_points_length[1] - 2) +
-     t_test_data$intercept_std_err[2]^4 / (t_test_data$data_points_length[2] - 2))
-  p_value_intercept <- 2 * (1 - pt(abs(t_value_intercept), df_value_intercept))
-  cat("########## T TEST ##########\n\n")
-  cat("P Value slopes: ", p_value_slope, "\n")
-  cat("P Value intercept: ", p_value_intercept, "\n\n")
+    t_value_intercept <-
+      (t_test_data$intercept[1] - t_test_data$intercept[2]) /
+      sqrt(t_test_data$intercept_std_err[1]^2 + t_test_data$intercept_std_err[2]^2)
+    df_value_intercept <-
+      (t_test_data$intercept_std_err[1]^2 + t_test_data$intercept_std_err[2]^2)^2 /
+      (t_test_data$intercept_std_err[1]^4 / (t_test_data$data_points_length[1] - 2) +
+       t_test_data$intercept_std_err[2]^4 / (t_test_data$data_points_length[2] - 2))
+    p_value_intercept <- 2 * (1 - pt(abs(t_value_intercept), df_value_intercept))
+    cat("########## T TEST ##########\n\n")
+    cat("P Value slopes: ", p_value_slope, "\n")
+    cat("P Value intercept: ", p_value_intercept, "\n\n")
+  } else {
+    cat("########## T TEST ##########\n\n")
+    cat("T test cannot be executed with ", length(t_test_data$slope), " samples\n")
+  }
 }

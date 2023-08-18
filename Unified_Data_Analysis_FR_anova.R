@@ -22,18 +22,18 @@ source("linear_regression.R")
 # Directories where to scan for csv data
 dir_paths <- list(
   "data/spedizione/tubeworms_mussels/Oxic Pressure",
-  "data/spedizione/tubeworms_mussels/Anoxic Pressure - No10"
-  #"data/spedizione/chimney/Oxic Pressure - No10",
-  #"data/spedizione/chimney/Oxic Pressure"
-  #"data/nioz"
+  #"data/spedizione/tubeworms_mussels/Anoxic Pressure - No10"
+  "data/spedizione/chimney/Oxic Pressure - No10",
+  #"data/spedizione/chimney/Oxic Pressure",
+  "data/nioz"
 )
 
 ########### ATTENTION!!!!!!! ##########
 # params start values for nls model (must be the same element numbers as dir_paths)
 nls_param_list <- list(
   list(100, 30, 4),
-  list(100, 30, 4)
-  #list(0.5, 33, 77)
+  list(100, 30, 4),
+  list(0.5, 33, 77)
 )
 
 anova_data <- data.frame()
@@ -67,5 +67,5 @@ anova_analysis(
 )
 
 t_test_func(
-  t_test_data = linear_regression_result$t_test_data
+  t_test_data = t_test_data
 )
