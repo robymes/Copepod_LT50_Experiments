@@ -23,7 +23,7 @@ source("linear_regression.R")
 dir_paths <- list(
   "data/spedizione/tubeworms_mussels/Oxic Pressure",
   "data/spedizione/tubeworms_mussels/Anoxic Pressure - No10"
-  #"data/spedizione/chimney/Oxic Pressure - No10"
+  #"data/spedizione/chimney/Oxic Pressure - No10",
   #"data/spedizione/chimney/Oxic Pressure"
   #"data/nioz"
 )
@@ -33,7 +33,7 @@ dir_paths <- list(
 nls_param_list <- list(
   list(100, 30, 4),
   list(100, 30, 4)
-  # list(0.5, 33, 77)
+  #list(0.5, 33, 77)
 )
 
 anova_data <- data.frame()

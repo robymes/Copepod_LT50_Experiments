@@ -20,7 +20,7 @@ source("non_linear_regression.R")
 
 # Directories where to scan for csv data
 dir_paths <- list(
-  "data/spedizione/anova_analysis/chimney"
+  "data/spedizione/t_test/chimney/anoxic"
 )
 
 ########### ATTENTION!!!!!!! ##########

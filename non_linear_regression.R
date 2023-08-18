@@ -177,8 +177,13 @@ non_linear_regression_dir_func <- function(dir_path, nls_param_list, k, chart_su
   exposures <- c()
 
   for (n in time_list) {
+    left_part_csv_file <- ""
+    # if (grepl("_Data", csv_file)) {
+    #   left_part_csv_file <- sub("(.*)_Data.*", "\\1", csv_file)
+    #   left_part_csv_file <- gsub("_", " ", left_part_csv_file)
+    # }
     j <- j + 1
-    legend_line <- c(paste(as.character(time_list[j]), "h exposure"))
+    legend_line <- c(paste(as.character(time_list[j]), "h exposure ", left_part_csv_file))
     exposures <- c(exposures, legend_line)
   }
 

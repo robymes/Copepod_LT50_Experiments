@@ -25,13 +25,14 @@ survival_param_3 <- 0
 survival_param_4 <- 0
 survival_param_z <- 0
 
-# Directories where to scan for csv data
-dir_path <- "data/spedizione/chimney/Oxic Pressure - No10"
+# Directories where to scan for csv ata
+dir_path <- "data/spedizione/tubeworms_mussels/Anoxic Pressure - No10"
 
 ########### ATTENTION!!!!!!! ##########
 # params start values for nls model (must be the same element numbers as dir_paths)
 nls_param_list <- list(
   list(100, 30, 4)
+  #list(0.5, 33, 77)
 )
 
 survival_func <- function(x, y) {
@@ -63,12 +64,12 @@ survival_param_z <- linear_regression_result$survival_param_z
 # Create the 3D Thermal tolerance landscape plot
 
 # Create a sequence of temperature values from 25.0 to 45.0 with an increment of 0.5.
-temperature <- seq(0.0, 70.0, by = 0.5)
+temperature <- seq(0.0, 60.0, by = 0.5)
 
 # Create a sequence of time values from 3.0 to 102.0 with an increment of 3.0.
 # Add two more values 0.1 and 1 at the start of the time sequence.
 time <- seq(survival_param_4, 100.0, by = 1)
-time <- c(0.1, 1, time)
+time <- c(1, time)
 
 # Calculate the survival rate for each combination of temperature and time values.
 survival_rate <- outer(temperature, time, survival_func)
