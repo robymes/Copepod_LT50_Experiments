@@ -8,6 +8,8 @@ if (!require("plotly")) {
   library(plotly)
 }
 
+source("plot_utilities.R")
+
 non_linear_regression_file_func <- function(dir_path, csv_file, nls_param_list, time_list, lines_color, k, i) {
   # Fit binomial distribution
   csv_path <- sprintf("%s/%s", dir_path, csv_file)
@@ -182,7 +184,7 @@ non_linear_regression_dir_func <- function(dir_path, nls_param_list, k, chart_su
     if (grepl("_Data", csv_files[j])) {
       left_part_csv_file <- sub("(.*)_Data.*", "\\1", csv_files[j])
       left_part_csv_file <- gsub("_", " ", left_part_csv_file)
-    }    
+    }
     legend_line <- c(paste(as.character(time_list[j]), "h exposure ", left_part_csv_file))
     exposures <- c(exposures, legend_line)
   }
@@ -195,6 +197,8 @@ non_linear_regression_dir_func <- function(dir_path, nls_param_list, k, chart_su
     lwd = 2,
     cex = 0.7
   )
+
+  #save_plot_func(non_linear_regression_plot, paste("charts/", gsub(" ", "", chart_subtitle)), "lt50.png", 1920, 1080)
 
   return(list(
     ld50 = ld50,

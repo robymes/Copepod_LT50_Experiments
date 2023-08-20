@@ -15,7 +15,7 @@ if (!require("plotly")) {
   library(plotly)
 }
 
-source("chart_subtitle.R")
+source("plot_utilities.R")
 source("non_linear_regression.R")
 source("linear_regression.R")
 

@@ -8,6 +8,8 @@ if (!require("plotly")) {
   library(plotly)
 }
 
+source("plot_utilities.R")
+
 # Initialize dataframes for ANOVA analysis
 # Dataframe for LD50
 anova_data <- data.frame(
