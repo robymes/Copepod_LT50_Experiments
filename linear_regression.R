@@ -3,9 +3,14 @@ if (!require("MASS")) {
   library(MASS)
 }
 
-if (!require("plotly")) {
-  install.packages("plotly")
-  library(plotly)
+if (!require("ggplot2")) {
+  install.packages("ggplot2")
+  library(ggplot2)
+}
+
+if (!require("Cairo")) {
+  install.packages("Cairo")
+  library(Cairo)
 }
 
 source("plot_utilities.R")
@@ -62,7 +67,6 @@ linear_regression_func <- function(dir_path, ld50, time_list, chart_subtitle) {
     intercept = tdt_intercept_hours,
     dir = chart_subtitle
   )
-  #anova_slopes <- rbind(anova_slopes, new_anova_element)
 
   new_t_test_data <- data.frame(
     slope = summary(tdt_results_hours)$coefficients[2, 1],
@@ -72,7 +76,6 @@ linear_regression_func <- function(dir_path, ld50, time_list, chart_subtitle) {
     data_points_length = length(lt50_temp$time_list),
     dir = dir_path
   )
-  #t_test_data <- rbind(t_test_data, new_t_test_data)
 
   # Create plot with LD50/LT50 values in log-scale
   plot(log10(lt50$time_list), lt50$ld50,
@@ -108,6 +111,7 @@ linear_regression_func <- function(dir_path, ld50, time_list, chart_subtitle) {
 anova_analysis <- function(anova_data, anova_slopes) {
   # Plot ANOVA analysis
   anova_data$time_list <- log10(anova_data$time_list)
+  CairoWin()
   anova_plot <- ggplot(
     anova_data,
     aes(

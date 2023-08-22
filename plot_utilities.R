@@ -3,9 +3,14 @@ if (!require("MASS")) {
   library(MASS)
 }
 
-if (!require("plotly")) {
-  install.packages("plotly")
-  library(plotly)
+if (!require("ggplot2")) {
+  install.packages("ggplot2")
+  library(ggplot2)
+}
+
+if (!require("Cairo")) {
+  install.packages("Cairo")
+  library(Cairo)
 }
 
 chart_subtitle_func <- function(dir_path) {
@@ -24,13 +29,21 @@ save_plot_func <- function(plot, path, filename, width, height) {
   dpi <- 300
   width_in_inches <- width / dpi
   height_in_inches <- height / dpi
-  ggsave("grafico.png",
-    plot,
+  # Current script directory
+  script_path <- normalizePath(sys.frame(1)$ofile)
+  script_dir <- dirname(script_path)
+  plot_dir <- file.path(script_dir, path)
+  if (!dir.exists(plot_dir)) {
+    dir.create(plot_dir, recursive = TRUE)
+  }
+  CairoWin()
+  ggsave(
+    plot = plot,
     width = width_in_inches,
     height = height_in_inches,
     dpi = dpi,
-    path = path,
+    path = plot_dir,
     filename = filename,
-    antialias = "cairo"
+    type ="cairo-png"
   )
 }
