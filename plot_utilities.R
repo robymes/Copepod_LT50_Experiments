@@ -33,7 +33,7 @@ save_plot_func <- function(plot, path, filename, width, height) {
     height = height_in_inches,
     dpi = dpi,
     path = plot_dir,
-    filename = filename,
+    filename = paste(filename, ".png", sep = ""),
     type = "cairo-png"
   )
 }

@@ -174,7 +174,7 @@ non_linear_regression_dir_func <- function(
   save_plot_func(
     plot = non_linear_regression_plot,
     path = paste("charts/", gsub("\\\\", "/", gsub(" ", "", tools::toTitleCase(trimws(main_title)))), sep = ""),
-    filename = paste(gsub(" ", "", trimws(chart_subtitle)), "_lt50.png", sep = ""),
+    filename = paste(gsub(" ", "", trimws(chart_subtitle)), "_lt50", sep = ""),
     width = 1920,
     height = 1080
   )

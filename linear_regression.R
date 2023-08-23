@@ -93,7 +93,7 @@ linear_regression_func <- function(dir_path, ld50, time_list, main_title, chart_
   save_plot_func(
     plot = linear_regression_plot,
     path = paste("charts/", gsub("\\\\", "/", gsub(" ", "", tools::toTitleCase(trimws(main_title)))), sep = ""),
-    filename = paste(gsub(" ", "", trimws(chart_subtitle)), "_tdt.png", sep = ""),
+    filename = paste(gsub(" ", "", trimws(chart_subtitle)), "_tdt", sep = ""),
     width = 1920,
     height = 1080
   )
@@ -147,7 +147,7 @@ anova_analysis_func <- function(anova_data, anova_slopes, main_title) {
   save_plot_func(
     plot = anova_plot,
     path = paste("charts/", gsub("\\\\", "/", gsub(" ", "", tools::toTitleCase(trimws(main_title)))), sep = ""),
-    filename = "tdt.png",
+    filename = "tdt",
     width = 1920,
     height = 1080
   )
