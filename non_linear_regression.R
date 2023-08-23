@@ -62,7 +62,15 @@ non_linear_regression_file_func <- function(dir_path, csv_file, nls_param_list, 
   ))
 }
 
-non_linear_regression_dir_func <- function(dir_path, nls_param_list, k, chart_subtitle, csv_file_list = NULL) {
+non_linear_regression_dir_func <- function(
+  dir_path,
+  nls_param_list,
+  k,
+  main_title,
+  chart_subtitle,
+  csv_file_list = NULL
+) {
+  cat("########## NON LINEAR REGRESSION ##########\n\n")
   cat("########## DIRECTORY: ", dir_path, " ##########\n\n")
 
   if (is.null(csv_file_list)) {
@@ -77,8 +85,6 @@ non_linear_regression_dir_func <- function(dir_path, nls_param_list, k, chart_su
   nls_coefficients <- list()
   min_df <- .Machine$double.xmax
   survival_params <- c(0, 0, 0, 0)
-
-  cat("########## NON LINEAR REGRESSION ##########\n\n")
 
   lines_color <- c("green", "red", "blue", "orange", "purple")
   i <- 0
@@ -168,8 +174,8 @@ non_linear_regression_dir_func <- function(dir_path, nls_param_list, k, chart_su
 
   save_plot_func(
     plot = p,
-    path = paste("charts/anova/", gsub("\\\\", "/", gsub(" ", "", trimws(chart_subtitle))), sep = ""),
-    filename = "lt50.png",
+    path = paste("charts/", gsub("\\\\", "/", gsub(" ", "", tools::toTitleCase(trimws(main_title)))), sep = ""),
+    filename = paste(gsub(" ", "", trimws(chart_subtitle)), "_lt50.png", sep = ""),
     width = 1920,
     height = 1080
   )

@@ -42,7 +42,7 @@ tdt_line_func <- function(slope, intercept, z) {
   return(intercept + slope * z)
 }
 
-linear_regression_func <- function(dir_path, ld50, time_list, chart_subtitle) {
+linear_regression_func <- function(dir_path, ld50, time_list, main_title, chart_subtitle) {
   # Create the Thermal death time curve (TDT) plot
 
   cat("########## LINEAR REGRESSION ##########\n\n")
@@ -108,7 +108,7 @@ linear_regression_func <- function(dir_path, ld50, time_list, chart_subtitle) {
   ))
 }
 
-anova_analysis <- function(anova_data, anova_slopes) {
+anova_analysis_func <- function(anova_data, anova_slopes, main_title) {
   # Plot ANOVA analysis
   anova_data$time_list <- log10(anova_data$time_list)
   CairoWin()
@@ -141,8 +141,9 @@ anova_analysis <- function(anova_data, anova_slopes) {
   cat("\n")
 }
 
-t_test_func <- function(t_test_data) {
+t_test_func <- function(t_test_data, main_title) {
   # T test slope
+  cat("########## T TEST ##########\n\n")
   if (length(t_test_data$slope) == 2) {
     t_value_slope <-
       (t_test_data$slope[1] - t_test_data$slope[2]) /
@@ -160,12 +161,10 @@ t_test_func <- function(t_test_data) {
       (t_test_data$intercept_std_err[1]^2 + t_test_data$intercept_std_err[2]^2)^2 /
       (t_test_data$intercept_std_err[1]^4 / (t_test_data$data_points_length[1] - 2) +
        t_test_data$intercept_std_err[2]^4 / (t_test_data$data_points_length[2] - 2))
-    p_value_intercept <- 2 * (1 - pt(abs(t_value_intercept), df_value_intercept))
-    cat("########## T TEST ##########\n\n")
+    p_value_intercept <- 2 * (1 - pt(abs(t_value_intercept), df_value_intercept))    
     cat("P Value slopes: ", p_value_slope, "\n")
     cat("P Value intercept: ", p_value_intercept, "\n\n")
   } else {
-    cat("########## T TEST ##########\n\n")
     cat("T test cannot be executed with ", length(t_test_data$slope), " samples\n")
   }
 }

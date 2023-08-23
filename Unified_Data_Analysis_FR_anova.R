@@ -5,27 +5,19 @@
 # Run code using ctrl + shift + s (Source) to see uncluttered statistics in the console
 
 # Load or install required packages
-if (!require("MASS")) {
-  install.packages("MASS")
-  library(MASS)
-}
 
-if (!require("plotly")) {
-  install.packages("plotly")
-  library(plotly)
-}
-
-source("plot_utilities.R")
 source("non_linear_regression.R")
 source("linear_regression.R")
 
+main_title <- "TDT Chimney - Tubeworm Mussel - Nioz - Oxic Pressure"
+
 # Directories where to scan for csv data
 dir_paths <- list(
-  "data/spedizione/tubeworms_mussels/Oxic Pressure",
-  #"data/spedizione/tubeworms_mussels/Anoxic Pressure - No10"
-  "data/spedizione/chimney/Oxic Pressure - No10",
-  #"data/spedizione/chimney/Oxic Pressure",
-  "data/nioz"
+  "data/cruise/tubeworms_mussels/Oxic Pressure",
+  #"data/cruise/tubeworms_mussels/Anoxic Pressure - No10"
+  "data/cruise/chimney/Oxic Pressure - No10",
+  #"data/cruise/chimney/Oxic Pressure",
+  "data/lab/nioz/Oxic Pressure"
 )
 
 ########### ATTENTION!!!!!!! ##########
@@ -35,6 +27,8 @@ nls_param_list <- list(
   list(100, 30, 4),
   list(0.5, 33, 77)
 )
+
+cat("########## EXECUTION FOR: ", main_title, " ##########\n\n")
 
 anova_data <- data.frame()
 anova_slopes <- data.frame()
@@ -48,12 +42,14 @@ for (dir_path in dir_paths) {
     dir_path = dir_path,
     nls_param_list = nls_param_list,
     k = k,
-    chart_subtitle = chart_subtitle
+    chart_subtitle = chart_subtitle,
+    main_title = main_title
   )
   linear_regression_result <- linear_regression_func(
     dir_path = dir_path,
     ld50 = non_linear_regression_result$ld50,
     time_list = non_linear_regression_result$time_list,
+    main_title = main_title,
     chart_subtitle = chart_subtitle
   )
   anova_data <- rbind(anova_data, linear_regression_result$anova_data)
@@ -61,11 +57,13 @@ for (dir_path in dir_paths) {
   t_test_data <- rbind(t_test_data, linear_regression_result$t_test_data)
 }
 
-anova_analysis(
+anova_analysis_func(
   anova_data = anova_data,
-  anova_slopes = anova_slopes
+  anova_slopes = anova_slopes,
+  main_title = main_title
 )
 
 t_test_func(
-  t_test_data = t_test_data
+  t_test_data = t_test_data,
+  main_title = main_title
 )
