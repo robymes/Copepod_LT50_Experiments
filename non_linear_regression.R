@@ -122,9 +122,8 @@ non_linear_regression_dir_func <- function(
     )
   }
 
-  CairoWin()
   plot_data <- do.call(rbind, data_list)
-  p <- ggplot(plot_data, aes(x = xdata, y = ydata, color = as.factor(time))) +
+  non_linear_regression_plot <- ggplot(plot_data, aes(x = xdata, y = ydata, color = as.factor(time))) +
     geom_line() +
     labs(title = sprintf("LT50 Survival Curve\n%s", chart_subtitle),
          x = "Temperature (°C)", y = "Proportional Survival", color = "Exposure Time (h)") +
@@ -140,27 +139,27 @@ non_linear_regression_dir_func <- function(
       i = i
     )
 
-    p <- p + geom_point(data = data.frame(
+    non_linear_regression_plot <- non_linear_regression_plot + geom_point(data = data.frame(
       x = non_linear_regression_file_result$jitter_xdata,
       y = non_linear_regression_file_result$ydata,
       time = non_linear_regression_file_result$time
     ), aes(x = x, y = y, color = as.factor(time)), size = 0.5)
 
-    p <- p + geom_point(data = data.frame(
+    non_linear_regression_plot <- non_linear_regression_plot + geom_point(data = data.frame(
       x = non_linear_regression_file_result$model_dose,
       y = non_linear_regression_file_result$model_dose_y,
       time = non_linear_regression_file_result$time
     ), aes(x = x, y = y, color = as.factor(time)), shape = 18, size = 4,
     inherit.aes = FALSE)
 
-    p <- p + geom_errorbarh(data = data.frame(
+    non_linear_regression_plot <- non_linear_regression_plot + geom_errorbarh(data = data.frame(
       xmin = non_linear_regression_file_result$model_dose - non_linear_regression_file_result$model_dose_stderr,
       xmax = non_linear_regression_file_result$model_dose + non_linear_regression_file_result$model_dose_stderr,
       y = non_linear_regression_file_result$model_dose_y
     ), aes(xmin = xmin, xmax = xmax, y = y), height = 0.02,
     inherit.aes = FALSE)
 
-    p <- p + geom_text(data = data.frame(
+    non_linear_regression_plot <- non_linear_regression_plot + geom_text(data = data.frame(
       x = non_linear_regression_file_result$model_dose,
       y = non_linear_regression_file_result$model_dose_y,
       label = sprintf("%.2f", non_linear_regression_file_result$model_dose)
@@ -170,10 +169,10 @@ non_linear_regression_dir_func <- function(
     inherit.aes = FALSE)
   }
 
-  print(p)
+  print(non_linear_regression_plot)
 
   save_plot_func(
-    plot = p,
+    plot = non_linear_regression_plot,
     path = paste("charts/", gsub("\\\\", "/", gsub(" ", "", tools::toTitleCase(trimws(main_title)))), sep = ""),
     filename = paste(gsub(" ", "", trimws(chart_subtitle)), "_lt50.png", sep = ""),
     width = 1920,

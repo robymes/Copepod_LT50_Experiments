@@ -3,11 +3,6 @@ if (!require("ggplot2")) {
   library(ggplot2)
 }
 
-if (!require("Cairo")) {
-  install.packages("Cairo")
-  library(Cairo)
-}
-
 chart_subtitle_func <- function(dir_path) {
   chart_subtitle_parts <- unlist(strsplit(dir_path, "/"))
   chart_subtitle <- paste(
@@ -33,7 +28,7 @@ save_plot_func <- function(plot, path, filename, width, height) {
   if (!dir.exists(plot_dir)) {
     dir.create(plot_dir, recursive = TRUE)
   }
-  CairoWin()
+
   ggsave(
     plot = plot,
     width = width_in_inches,

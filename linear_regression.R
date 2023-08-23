@@ -8,11 +8,6 @@ if (!require("ggplot2")) {
   library(ggplot2)
 }
 
-if (!require("Cairo")) {
-  install.packages("Cairo")
-  library(Cairo)
-}
-
 source("plot_utilities.R")
 
 # Initialize dataframes for ANOVA analysis
@@ -111,7 +106,7 @@ linear_regression_func <- function(dir_path, ld50, time_list, main_title, chart_
 anova_analysis_func <- function(anova_data, anova_slopes, main_title) {
   # Plot ANOVA analysis
   anova_data$time_list <- log10(anova_data$time_list)
-  CairoWin()
+
   anova_plot <- ggplot(
     anova_data,
     aes(
@@ -135,6 +130,13 @@ anova_analysis_func <- function(anova_data, anova_slopes, main_title) {
       geom_line(data = anova_slope_df, aes(group = dir))
   }
   print(anova_plot)
+  save_plot_func(
+    plot = anova_plot,
+    path = paste("charts/", gsub("\\\\", "/", gsub(" ", "", tools::toTitleCase(trimws(main_title)))), sep = ""),
+    filename = "tdt.png",
+    width = 1920,
+    height = 1080
+  )
   anova_analysis <- anova(lm(ld50 ~ log(time_list) * dir, anova_data))
   cat("########## ANOVA ANALYSIS ##########\n\n")
   print(anova_analysis)

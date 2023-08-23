@@ -5,9 +5,15 @@
 # Run code using ctrl + shift + s (Source) to see uncluttered statistics in the console
 
 # Load or install required packages
+if (!require("Cairo")) {
+  install.packages("Cairo")
+  library(Cairo)
+}
 
 source("non_linear_regression.R")
 source("linear_regression.R")
+
+CairoWin()
 
 main_title <- "TDT Chimney - Tubeworm Mussel - Nioz - Oxic Pressure"
 
