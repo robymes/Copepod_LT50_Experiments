@@ -16,8 +16,6 @@ chart_subtitle_func <- function(dir_path) {
 }
 
 save_plot_func <- function(plot, path, filename, width, height) {
-  cat("path: ", path, "\n")
-  cat("filename: ", filename, "\n")
   dpi <- 300
   width_in_inches <- width / dpi
   height_in_inches <- height / dpi

@@ -72,17 +72,31 @@ linear_regression_func <- function(dir_path, ld50, time_list, main_title, chart_
     dir = dir_path
   )
 
-  # Create plot with LD50/LT50 values in log-scale
-  plot(log10(lt50$time_list), lt50$ld50,
-    xlim = c(0, 2), ylim = c(0, 55),
-    xlab = expression("log"[10] * "Time (LT50, hours)"),
-    ylab = "Temperature (LD50, °C)",
-    main = paste("Thermal death time (TDT) Curve\n", chart_subtitle)
-  )
+  df <- data.frame(x = log10(lt50$time_list), y = lt50$ld50)
 
-  # Create a vector of LD50 values and use it as input to plot the curve
+  # Create plot with LD50/LT50 values in log-scale
   z <- seq(0, 2, 0.01)
-  lines(z, tdt_line_func(tdt_slope, tdt_intercept_hours, z), new = TRUE)
+  df_lines <- data.frame(z = z, y = tdt_line_func(tdt_slope, tdt_intercept_hours, z))
+  linear_regression_plot <- ggplot(df, aes(x = x, y = y)) +
+    geom_point() +
+    geom_line(data = df_lines, aes(x = z, y = y)) +
+    xlim(0, 2) +
+    ylim(0, 55) +
+    labs(
+      x = expression("log"[10] * "Time (LT50, hours)"),
+      y = "Temperature (LD50, °C)",
+      title = paste("Thermal death time (TDT) Curve\n", chart_subtitle)
+    )
+
+  print(linear_regression_plot)
+
+  save_plot_func(
+    plot = linear_regression_plot,
+    path = paste("charts/", gsub("\\\\", "/", gsub(" ", "", tools::toTitleCase(trimws(main_title)))), sep = ""),
+    filename = paste(gsub(" ", "", trimws(chart_subtitle)), "_tdt.png", sep = ""),
+    width = 1920,
+    height = 1080
+  )
 
   # Calculate R squared goodness of fit for the TDT curve
   cat("Summary statistics for TDT curve\n")

@@ -162,7 +162,7 @@ non_linear_regression_dir_func <- function(
     non_linear_regression_plot <- non_linear_regression_plot + geom_text(data = data.frame(
       x = non_linear_regression_file_result$model_dose,
       y = non_linear_regression_file_result$model_dose_y,
-      label = sprintf("%.2f", non_linear_regression_file_result$model_dose)
+      label = sprintf("%.1f", non_linear_regression_file_result$model_dose)
     ), aes(x = x, y = y, label = label),
     position = position_nudge(y = -0.05),
     size = 2,
