@@ -62,8 +62,8 @@ non_linear_regression_file_func <- function(dir_path, csv_file, nls_param_list, 
     fit_pred = predict(fit, newdata = new),
     time = ifelse(
       left_part_csv_file == "",
-      paste(time_list[i], "h exposure"),
-      paste(left_part_csv_file, "-", time_list[i], "h exposure")
+      paste(sprintf("%02d", time_list[i]), "h exposure"),
+      paste(left_part_csv_file, "-", sprintf("%02d", time_list[i]), "h exposure")
     ),
     jitter_xdata = jitter(xdata, factor = 0.5),
     ydata = ydata,
