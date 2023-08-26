@@ -47,13 +47,24 @@ non_linear_regression_file_func <- function(dir_path, csv_file, nls_param_list, 
   model_dose_y <- predict(fit, newdata = data.frame(xdata = model_dose))
   model_dose_stderr <- fit_params$parameters[2, 2]
 
+  # Extract the left part of the csv file name in order to verify if data has to be splitted by this part of the name
+  left_part_csv_file <- ""
+  if (grepl("_Data", csv_file)) {
+    left_part_csv_file <- sub("(.*)_Data.*", "\\1", csv_file)
+    left_part_csv_file <- gsub("_", " ", left_part_csv_file)
+  }
+
   return(list(
     ld50 = ld50,
     fit_params = fit_params,
     df = df.residual(fit),
     new_data = new,
     fit_pred = predict(fit, newdata = new),
-    time = time_list[i],
+    time = ifelse(
+      left_part_csv_file == "",
+      paste(time_list[i], "h exposure"),
+      paste(left_part_csv_file, "-", time_list[i], "h exposure")
+    ),
     jitter_xdata = jitter(xdata, factor = 0.5),
     ydata = ydata,
     model_dose = model_dose,
@@ -123,10 +134,12 @@ non_linear_regression_dir_func <- function(
   }
 
   plot_data <- do.call(rbind, data_list)
+
+  # Create a plot adding the non-linear regression lines
   non_linear_regression_plot <- ggplot(plot_data, aes(x = xdata, y = ydata, color = as.factor(time))) +
     geom_line() +
     labs(title = sprintf("LT50 Survival Curve\n%s", chart_subtitle),
-         x = "Temperature (°C)", y = "Proportional Survival", color = "Exposure Time (h)") +
+         x = "Temperature (°C)", y = "Proportional Survival") +
     scale_color_manual(values = lines_color, name = "Exposure Time (h)")
 
   for (i in 1:length(data_list)) {
@@ -139,12 +152,14 @@ non_linear_regression_dir_func <- function(
       i = i
     )
 
+    # Add to plot original sample data points
     non_linear_regression_plot <- non_linear_regression_plot + geom_point(data = data.frame(
       x = non_linear_regression_file_result$jitter_xdata,
       y = non_linear_regression_file_result$ydata,
       time = non_linear_regression_file_result$time
     ), aes(x = x, y = y, color = as.factor(time)), size = 0.5)
 
+    # Add to plot model dose points
     non_linear_regression_plot <- non_linear_regression_plot + geom_point(data = data.frame(
       x = non_linear_regression_file_result$model_dose,
       y = non_linear_regression_file_result$model_dose_y,
@@ -152,6 +167,7 @@ non_linear_regression_dir_func <- function(
     ), aes(x = x, y = y, color = as.factor(time)), shape = 18, size = 4,
     inherit.aes = FALSE)
 
+    # Add to plot std. error bars
     non_linear_regression_plot <- non_linear_regression_plot + geom_errorbarh(data = data.frame(
       xmin = non_linear_regression_file_result$model_dose - non_linear_regression_file_result$model_dose_stderr,
       xmax = non_linear_regression_file_result$model_dose + non_linear_regression_file_result$model_dose_stderr,
@@ -159,6 +175,7 @@ non_linear_regression_dir_func <- function(
     ), aes(xmin = xmin, xmax = xmax, y = y), height = 0.02,
     inherit.aes = FALSE)
 
+    # Add to plot model dose temperature values
     non_linear_regression_plot <- non_linear_regression_plot + geom_text(data = data.frame(
       x = non_linear_regression_file_result$model_dose,
       y = non_linear_regression_file_result$model_dose_y,

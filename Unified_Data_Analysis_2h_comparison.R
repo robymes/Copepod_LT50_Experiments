@@ -5,22 +5,20 @@
 # Run code using ctrl + shift + s (Source) to see uncluttered statistics in the console
 
 # Load or install required packages
-if (!require("MASS")) {
-  install.packages("MASS")
-  library(MASS)
+if (!require("Cairo")) {
+  install.packages("Cairo")
+  library(Cairo)
 }
 
-if (!require("plotly")) {
-  install.packages("plotly")
-  library(plotly)
-}
-
-source("plot_utilities.R")
 source("non_linear_regression.R")
+
+CairoWin()
+
+main_title <- "2h tubeworm oxic pressure-nopressure"
 
 # Directories where to scan for csv data
 dir_paths <- list(
-  "data/spedizione/t_test/tubeworms_mussels/oxic"
+  "data/cruise/t_test/tubeworms_mussels/oxic"
 )
 
 ########### ATTENTION!!!!!!! ##########
@@ -38,7 +36,8 @@ for (dir_path in dir_paths) {
     dir_path = dir_path,
     nls_param_list = nls_param_list,
     k = k,
-    chart_subtitle = chart_subtitle
+    chart_subtitle = chart_subtitle,
+    main_title = main_title
   )
 }
 

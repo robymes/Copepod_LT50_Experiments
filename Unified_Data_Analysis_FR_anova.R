@@ -15,7 +15,7 @@ source("linear_regression.R")
 
 CairoWin()
 
-main_title <- "TDT Chimney - Tubeworm Mussel - Nioz - Oxic Pressure"
+main_title <- "tdt chimney - tubeworm - nioz - oxic pressure"
 
 # Directories where to scan for csv data
 dir_paths <- list(
