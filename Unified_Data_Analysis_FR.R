@@ -5,9 +5,9 @@
 # Run code using ctrl + shift + s (Source) to see uncluttered statistics in the console
 
 # Load or install required packages
-if (!require("MASS")) {
-  install.packages("MASS")
-  library(MASS)
+if (!require("Cairo")) {
+  install.packages("Cairo")
+  library(Cairo)
 }
 
 if (!require("plotly")) {
@@ -19,6 +19,10 @@ source("plot_utilities.R")
 source("non_linear_regression.R")
 source("linear_regression.R")
 
+CairoWin()
+
+main_title <- "3d tubeworm oxic pressure"
+
 survival_param_1 <- 0
 survival_param_2 <- 0
 survival_param_3 <- 0
@@ -26,7 +30,7 @@ survival_param_4 <- 0
 survival_param_z <- 0
 
 # Directories where to scan for csv ata
-dir_path <- "data/spedizione/tubeworms_mussels/Anoxic Pressure - No10"
+dir_path <- "data/cruise/tubeworms_mussels/Oxic Pressure"
 
 ########### ATTENTION!!!!!!! ##########
 # params start values for nls model (must be the same element numbers as dir_paths)
@@ -45,14 +49,16 @@ non_linear_regression_result <- non_linear_regression_dir_func(
   dir_path = dir_path,
   nls_param_list = nls_param_list,
   k = 1,
-  chart_subtitle = chart_subtitle
+  chart_subtitle = chart_subtitle,
+  main_title = main_title
 )
 
 linear_regression_result <- linear_regression_func(
   dir_path = dir_path,
   ld50 = non_linear_regression_result$ld50,
   time_list = non_linear_regression_result$time_list,
-  chart_subtitle = chart_subtitle
+  chart_subtitle = chart_subtitle,
+  main_title = main_title
 )
 
 survival_param_1 <- non_linear_regression_result$survival_params[1]
