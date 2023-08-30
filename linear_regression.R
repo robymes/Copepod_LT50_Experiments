@@ -172,7 +172,7 @@ t_test_func <- function(t_test_data, main_title) {
       (t_test_data$intercept_std_err[1]^2 + t_test_data$intercept_std_err[2]^2)^2 /
       (t_test_data$intercept_std_err[1]^4 / (t_test_data$data_points_length[1] - 2) +
        t_test_data$intercept_std_err[2]^4 / (t_test_data$data_points_length[2] - 2))
-    p_value_intercept <- 2 * (1 - pt(abs(t_value_intercept), df_value_intercept))    
+    p_value_intercept <- 2 * (1 - pt(abs(t_value_intercept), df_value_intercept))
     cat("P Value slopes: ", p_value_slope, "\n")
     cat("P Value intercept: ", p_value_intercept, "\n\n")
   } else {
