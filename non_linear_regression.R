@@ -1,16 +1,6 @@
-if (!require("MASS")) {
-  install.packages("MASS")
-  library(MASS)
-}
-
 if (!require("ggplot2")) {
   install.packages("ggplot2")
   library(ggplot2)
-}
-
-if (!require("Cairo")) {
-  install.packages("Cairo")
-  library(Cairo)
 }
 
 source("plot_utilities.R")

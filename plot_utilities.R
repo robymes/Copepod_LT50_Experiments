@@ -3,6 +3,18 @@ if (!require("ggplot2")) {
   library(ggplot2)
 }
 
+check_os_func <- function() {
+  sys_info <- Sys.info()
+  os_type <- sys_info["sysname"]
+  if (os_type == "Windows") {
+     if (!require("Cairo")) {
+      install.packages("Cairo")
+      library(Cairo)
+    }
+    CairoWin()
+  }
+}
+
 chart_subtitle_func <- function(dir_path) {
   chart_subtitle_parts <- unlist(strsplit(dir_path, "/"))
   chart_subtitle <- paste(

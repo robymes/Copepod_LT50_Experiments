@@ -4,12 +4,6 @@
 # All data used in the analysis should be in one folder with no other extra files
 # Run code using ctrl + shift + s (Source) to see uncluttered statistics in the console
 
-# Load or install required packages
-if (!require("Cairo")) {
-  install.packages("Cairo")
-  library(Cairo)
-}
-
 if (!require("plotly")) {
   install.packages("plotly")
   library(plotly)
@@ -19,7 +13,7 @@ source("plot_utilities.R")
 source("non_linear_regression.R")
 source("linear_regression.R")
 
-CairoWin()
+check_os_func()
 
 main_title <- "3d tubeworm oxic pressure"
 
