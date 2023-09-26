@@ -15,7 +15,8 @@ source("linear_regression.R")
 
 check_os_func()
 
-main_title <- "3d tubeworm oxic pressure"
+#main_title <- "3d tubeworm oxic pressure"
+main_title <- "3d pompeii worms oxic pressure"
 
 survival_param_1 <- 0
 survival_param_2 <- 0
@@ -24,7 +25,8 @@ survival_param_4 <- 0
 survival_param_z <- 0
 
 # Directories where to scan for csv ata
-dir_path <- "data/cruise/tubeworms_mussels/Oxic Pressure"
+#dir_path <- "data/cruise/tubeworms_mussels/Oxic Pressure"
+dir_path <- "data/cruise/pompeii_worms/Oxic Pressure"
 
 ########### ATTENTION!!!!!!! ##########
 # params start values for nls model (must be the same element numbers as dir_paths)

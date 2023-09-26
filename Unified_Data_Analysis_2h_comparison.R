@@ -10,10 +10,14 @@ source("non_linear_regression.R")
 check_os_func()
 
 main_title <- "2h tubeworm oxic pressure-nopressure"
+#main_title <- "2h popmpeii worm oxic pressure-nopressure"
+#main_title <- "2h popmpeii worm anoxic pressure-nopressure"
 
 # Directories where to scan for csv data
 dir_paths <- list(
   "data/cruise/t_test/tubeworms_mussels/oxic"
+  #"data/cruise/t_test/pompeii_worms/oxic"
+  #"data/cruise/t_test/pompeii_worms/anoxic"
 )
 
 ########### ATTENTION!!!!!!! ##########

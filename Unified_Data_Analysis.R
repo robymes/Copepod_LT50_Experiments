@@ -34,8 +34,8 @@ survival_func <- function(x, y) {
 }
 
 # Specify the directory
-# dir_path <- "data/spedizione/tubeworms _mussels/Oxic Pressure"
-dir_path <- "data/spedizione/chimney/Oxic Pressure"
+# dir_path <- "data/cruise/tubeworms _mussels/Oxic Pressure"
+dir_path <- "data/cruise/pompeii_worms/Oxic Pressure"
 
 # Get a list of all files in the directory
 csv_files <- list.files(path = dir_path)

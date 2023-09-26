@@ -10,23 +10,22 @@ source("linear_regression.R")
 
 check_os_func()
 
-main_title <- "tdt tubeworm oxic anoxic"
+main_title <- "tdt pompeii worm-tubeworm-intertidal oxic"
 
 # Directories where to scan for csv data
 dir_paths <- list(
   "data/cruise/tubeworms_mussels/Oxic Pressure",
-  "data/cruise/tubeworms_mussels/Anoxic Pressure"
-  #"data/cruise/chimney/Oxic Pressure",
-  #"data/cruise/chimney/Oxic Pressure",
-  #"data/nioz/intertidal/Oxic Pressure"
+  #"data/cruise/tubeworms_mussels/Anoxic Pressure"
+  "data/cruise/pompeii_worms/Oxic Pressure",
+  "data/nioz/intertidal/Oxic Pressure"
 )
 
 ########### ATTENTION!!!!!!! ##########
 # params start values for nls model (must be the same element numbers as dir_paths)
 nls_param_list <- list(
   list(100, 30, 4),
-  list(100, 30, 4)
-  #list(0.5, 33, 77)
+  list(100, 30, 4),
+  list(0.5, 33, 77)
 )
 
 cat("########## EXECUTION FOR: ", main_title, " ##########\n\n")

@@ -4,7 +4,7 @@ source("linear_regression.R")
 
 check_os_func()
 
-dir_path <- "data/spedizione/chimney/Oxic Pressure"
+dir_path <- "data/cruise/pompeii_worms/Oxic Pressure"
 csv_file <- c("Data08.csv")
 
 non_linear_regression_dir_func(
