@@ -1,0 +1,801 @@
+﻿Site,Species,Habitat,Abundance
+SUBLIFE,Aphotopontius_acanthinus,PW_2023,0
+SUBLIFE,Aphotopontius_arcuatus,PW_2023,0
+SUBLIFE,Aphotopontius_flexispina,PW_2023,0
+SUBLIFE,Aphotopontius_hydronauticus ,PW_2023,0
+SUBLIFE,Aphotopontius_limatulus,PW_2023,0
+SUBLIFE,Aphotopontius_mammilatus,PW_2023,0
+SUBLIFE,Aphotopontius_probolus,PW_2023,0
+SUBLIFE,Benthoxynus_tumidiseta,PW_2023,0
+SUBLIFE,Ceuthocetes_introversus,PW_2023,0
+SUBLIFE,Ceuthoecetes_acanthotrix,PW_2023,1.25
+SUBLIFE,Ceuthoecetes_aliger,PW_2023,0
+SUBLIFE,Ceuthoecetes_Nilva_juvenile,PW_2023,0
+SUBLIFE,copepodites,PW_2023,0
+SUBLIFE,Dirivultidae_juvenile,PW_2023,0
+SUBLIFE,Ecbathyrion_prolixicauda,PW_2023,0
+SUBLIFE,Nilva_torifera,PW_2023,0.5
+SUBLIFE,Rhogobius_sp,PW_2023,0
+SUBLIFE,Scotoecetes_introrsus,PW_2023,0
+SUBLIFE,Stygiopontius_appositus,PW_2023,5.25
+SUBLIFE,Stygiopontius_flexus,PW_2023,0
+SUBLIFE,Stygiopontius_hispidulus,PW_2023,92.42
+SUBLIFE,Stygiopontius_mucroniferus,PW_2023,0
+SUBLIFE,Stygiopontius_paxillifer ,PW_2023,0
+SUBLIFE,Stygiopontius_sentifer,PW_2023,0.58
+SUBLIFE,Stygiopontius_stabilitus,PW_2023,0
+SUBLIFE,Aphotopontius_acanthinus,TM_2023,2.03
+SUBLIFE,Aphotopontius_arcuatus,TM_2023,0.68
+SUBLIFE,Aphotopontius_flexispina,TM_2023,0
+SUBLIFE,Aphotopontius_hydronauticus ,TM_2023,0
+SUBLIFE,Aphotopontius_limatulus,TM_2023,0.66
+SUBLIFE,Aphotopontius_mammilatus,TM_2023,32.81
+SUBLIFE,Aphotopontius_probolus,TM_2023,0
+SUBLIFE,Benthoxynus_tumidiseta,TM_2023,0
+SUBLIFE,Ceuthocetes_introversus,TM_2023,0
+SUBLIFE,Ceuthoecetes_acanthotrix,TM_2023,36.98
+SUBLIFE,Ceuthoecetes_aliger,TM_2023,0
+SUBLIFE,Ceuthoecetes_Nilva_juvenile,TM_2023,0
+SUBLIFE,copepodites,TM_2023,2.25
+SUBLIFE,Dirivultidae_juvenile,TM_2023,0
+SUBLIFE,Ecbathyrion_prolixicauda,TM_2023,0
+SUBLIFE,Nilva_torifera,TM_2023,6.31
+SUBLIFE,Rhogobius_sp,TM_2023,5.41
+SUBLIFE,Scotoecetes_introrsus,TM_2023,1.69
+SUBLIFE,Stygiopontius_appositus,TM_2023,0
+SUBLIFE,Stygiopontius_flexus,TM_2023,0
+SUBLIFE,Stygiopontius_hispidulus,TM_2023,11.27
+SUBLIFE,Stygiopontius_mucroniferus,TM_2023,0
+SUBLIFE,Stygiopontius_paxillifer ,TM_2023,0
+SUBLIFE,Stygiopontius_sentifer,TM_2023,0
+SUBLIFE,Stygiopontius_stabilitus,TM_2023,0
+Michel's Vent,Aphotopontius_acanthinus,PW_pre,0
+Michel's Vent,Aphotopontius_arcuatus,PW_pre,0
+Michel's Vent,Aphotopontius_flexispina,PW_pre,0
+Michel's Vent,Aphotopontius_hydronauticus ,PW_pre,0
+Michel's Vent,Aphotopontius_limatulus,PW_pre,0
+Michel's Vent,Aphotopontius_mammilatus,PW_pre,0
+Michel's Vent,Aphotopontius_probolus,PW_pre,0
+Michel's Vent,Benthoxynus_tumidiseta,PW_pre,0
+Michel's Vent,Ceuthocetes_introversus,PW_pre,0
+Michel's Vent,Ceuthoecetes_acanthotrix,PW_pre,0
+Michel's Vent,Ceuthoecetes_aliger,PW_pre,0
+Michel's Vent,Ceuthoecetes_Nilva_juvenile,PW_pre,0
+Michel's Vent,copepodites,PW_pre,0
+Michel's Vent,Dirivultidae_juvenile,PW_pre,0
+Michel's Vent,Ecbathyrion_prolixicauda,PW_pre,0
+Michel's Vent,Nilva_torifera,PW_pre,0
+Michel's Vent,Rhogobius_sp,PW_pre,0
+Michel's Vent,Scotoecetes_introrsus,PW_pre,0
+Michel's Vent,Stygiopontius_appositus,PW_pre,0
+Michel's Vent,Stygiopontius_flexus,PW_pre,0.33
+Michel's Vent,Stygiopontius_hispidulus,PW_pre,99.02
+Michel's Vent,Stygiopontius_mucroniferus,PW_pre,0
+Michel's Vent,Stygiopontius_paxillifer ,PW_pre,0
+Michel's Vent,Stygiopontius_sentifer,PW_pre,0.66
+Michel's Vent,Stygiopontius_stabilitus,PW_pre,0
+Alvinella Pillar,Aphotopontius_acanthinus,PW_pre,0
+Alvinella Pillar,Aphotopontius_arcuatus,PW_pre,0
+Alvinella Pillar,Aphotopontius_flexispina,PW_pre,0
+Alvinella Pillar,Aphotopontius_hydronauticus ,PW_pre,0
+Alvinella Pillar,Aphotopontius_limatulus,PW_pre,0
+Alvinella Pillar,Aphotopontius_mammilatus,PW_pre,0
+Alvinella Pillar,Aphotopontius_probolus,PW_pre,0
+Alvinella Pillar,Benthoxynus_tumidiseta,PW_pre,0
+Alvinella Pillar,Ceuthocetes_introversus,PW_pre,0
+Alvinella Pillar,Ceuthoecetes_acanthotrix,PW_pre,0
+Alvinella Pillar,Ceuthoecetes_aliger,PW_pre,0
+Alvinella Pillar,Ceuthoecetes_Nilva_juvenile,PW_pre,0
+Alvinella Pillar,copepodites,PW_pre,1.07
+Alvinella Pillar,Dirivultidae_juvenile,PW_pre,0
+Alvinella Pillar,Ecbathyrion_prolixicauda,PW_pre,0
+Alvinella Pillar,Nilva_torifera,PW_pre,0
+Alvinella Pillar,Rhogobius_sp,PW_pre,0
+Alvinella Pillar,Scotoecetes_introrsus,PW_pre,0
+Alvinella Pillar,Stygiopontius_appositus,PW_pre,0
+Alvinella Pillar,Stygiopontius_flexus,PW_pre,0
+Alvinella Pillar,Stygiopontius_hispidulus,PW_pre,88.45
+Alvinella Pillar,Stygiopontius_mucroniferus,PW_pre,0
+Alvinella Pillar,Stygiopontius_paxillifer ,PW_pre,6.22
+Alvinella Pillar,Stygiopontius_sentifer,PW_pre,4.08
+Alvinella Pillar,Stygiopontius_stabilitus,PW_pre,0.18
+Bio 9 1,Aphotopontius_acanthinus,PW_pre,0
+Bio 9 1,Aphotopontius_arcuatus,PW_pre,0
+Bio 9 1,Aphotopontius_flexispina,PW_pre,0
+Bio 9 1,Aphotopontius_hydronauticus ,PW_pre,0
+Bio 9 1,Aphotopontius_limatulus,PW_pre,0
+Bio 9 1,Aphotopontius_mammilatus,PW_pre,0
+Bio 9 1,Aphotopontius_probolus,PW_pre,0
+Bio 9 1,Benthoxynus_tumidiseta,PW_pre,0
+Bio 9 1,Ceuthocetes_introversus,PW_pre,0
+Bio 9 1,Ceuthoecetes_acanthotrix,PW_pre,0
+Bio 9 1,Ceuthoecetes_aliger,PW_pre,0
+Bio 9 1,Ceuthoecetes_Nilva_juvenile,PW_pre,0
+Bio 9 1,copepodites,PW_pre,0.35
+Bio 9 1,Dirivultidae_juvenile,PW_pre,0
+Bio 9 1,Ecbathyrion_prolixicauda,PW_pre,0
+Bio 9 1,Nilva_torifera,PW_pre,0
+Bio 9 1,Rhogobius_sp,PW_pre,0
+Bio 9 1,Scotoecetes_introrsus,PW_pre,0
+Bio 9 1,Stygiopontius_appositus,PW_pre,0
+Bio 9 1,Stygiopontius_flexus,PW_pre,0
+Bio 9 1,Stygiopontius_hispidulus,PW_pre,96.48
+Bio 9 1,Stygiopontius_mucroniferus,PW_pre,0
+Bio 9 1,Stygiopontius_paxillifer ,PW_pre,1.93
+Bio 9 1,Stygiopontius_sentifer,PW_pre,1.23
+Bio 9 1,Stygiopontius_stabilitus,PW_pre,0
+M Vent,Aphotopontius_acanthinus,PW_pre,0
+M Vent,Aphotopontius_arcuatus,PW_pre,0
+M Vent,Aphotopontius_flexispina,PW_pre,0
+M Vent,Aphotopontius_hydronauticus ,PW_pre,0
+M Vent,Aphotopontius_limatulus,PW_pre,0
+M Vent,Aphotopontius_mammilatus,PW_pre,0
+M Vent,Aphotopontius_probolus,PW_pre,0
+M Vent,Benthoxynus_tumidiseta,PW_pre,0
+M Vent,Ceuthocetes_introversus,PW_pre,0
+M Vent,Ceuthoecetes_acanthotrix,PW_pre,0
+M Vent,Ceuthoecetes_aliger,PW_pre,0
+M Vent,Ceuthoecetes_Nilva_juvenile,PW_pre,0
+M Vent,copepodites,PW_pre,0
+M Vent,Dirivultidae_juvenile,PW_pre,0
+M Vent,Ecbathyrion_prolixicauda,PW_pre,0
+M Vent,Nilva_torifera,PW_pre,0
+M Vent,Rhogobius_sp,PW_pre,0
+M Vent,Scotoecetes_introrsus,PW_pre,0
+M Vent,Stygiopontius_appositus,PW_pre,0
+M Vent,Stygiopontius_flexus,PW_pre,0
+M Vent,Stygiopontius_hispidulus,PW_pre,96.67
+M Vent,Stygiopontius_mucroniferus,PW_pre,0
+M Vent,Stygiopontius_paxillifer ,PW_pre,2.5
+M Vent,Stygiopontius_sentifer,PW_pre,0.83
+M Vent,Stygiopontius_stabilitus,PW_pre,0
+Q Vent,Aphotopontius_acanthinus,PW_pre,0
+Q Vent,Aphotopontius_arcuatus,PW_pre,0.25
+Q Vent,Aphotopontius_flexispina,PW_pre,0
+Q Vent,Aphotopontius_hydronauticus ,PW_pre,0
+Q Vent,Aphotopontius_limatulus,PW_pre,0
+Q Vent,Aphotopontius_mammilatus,PW_pre,0
+Q Vent,Aphotopontius_probolus,PW_pre,0
+Q Vent,Benthoxynus_tumidiseta,PW_pre,0
+Q Vent,Ceuthocetes_introversus,PW_pre,0
+Q Vent,Ceuthoecetes_acanthotrix,PW_pre,0
+Q Vent,Ceuthoecetes_aliger,PW_pre,0
+Q Vent,Ceuthoecetes_Nilva_juvenile,PW_pre,0
+Q Vent,copepodites,PW_pre,0
+Q Vent,Dirivultidae_juvenile,PW_pre,0
+Q Vent,Ecbathyrion_prolixicauda,PW_pre,0.76
+Q Vent,Nilva_torifera,PW_pre,0
+Q Vent,Rhogobius_sp,PW_pre,0
+Q Vent,Scotoecetes_introrsus,PW_pre,0
+Q Vent,Stygiopontius_appositus,PW_pre,0
+Q Vent,Stygiopontius_flexus,PW_pre,0
+Q Vent,Stygiopontius_hispidulus,PW_pre,97.23
+Q Vent,Stygiopontius_mucroniferus,PW_pre,0
+Q Vent,Stygiopontius_paxillifer ,PW_pre,1.51
+Q Vent,Stygiopontius_sentifer,PW_pre,0.25
+Q Vent,Stygiopontius_stabilitus,PW_pre,0
+Tica 1,Aphotopontius_acanthinus,TM_pre,0.46
+Tica 1,Aphotopontius_arcuatus,TM_pre,0
+Tica 1,Aphotopontius_flexispina,TM_pre,0
+Tica 1,Aphotopontius_hydronauticus ,TM_pre,0.92
+Tica 1,Aphotopontius_limatulus,TM_pre,0
+Tica 1,Aphotopontius_mammilatus,TM_pre,0
+Tica 1,Aphotopontius_probolus,TM_pre,1.84
+Tica 1,Benthoxynus_tumidiseta,TM_pre,0
+Tica 1,Ceuthocetes_introversus,TM_pre,23.5
+Tica 1,Ceuthoecetes_acanthotrix,TM_pre,20.28
+Tica 1,Ceuthoecetes_aliger,TM_pre,26.73
+Tica 1,Ceuthoecetes_Nilva_juvenile,TM_pre,0
+Tica 1,copepodites,TM_pre,25.81
+Tica 1,Dirivultidae_juvenile,TM_pre,0
+Tica 1,Ecbathyrion_prolixicauda,TM_pre,0
+Tica 1,Nilva_torifera,TM_pre,0
+Tica 1,Rhogobius_sp,TM_pre,0.46
+Tica 1,Scotoecetes_introrsus,TM_pre,0
+Tica 1,Stygiopontius_appositus,TM_pre,0
+Tica 1,Stygiopontius_flexus,TM_pre,0
+Tica 1,Stygiopontius_hispidulus,TM_pre,0
+Tica 1,Stygiopontius_mucroniferus,TM_pre,0
+Tica 1,Stygiopontius_paxillifer ,TM_pre,0
+Tica 1,Stygiopontius_sentifer,TM_pre,0
+Tica 1,Stygiopontius_stabilitus,TM_pre,0
+Tica 2,Aphotopontius_acanthinus,TM_pre,0
+Tica 2,Aphotopontius_arcuatus,TM_pre,0
+Tica 2,Aphotopontius_flexispina,TM_pre,0
+Tica 2,Aphotopontius_hydronauticus ,TM_pre,0
+Tica 2,Aphotopontius_limatulus,TM_pre,0
+Tica 2,Aphotopontius_mammilatus,TM_pre,0.39
+Tica 2,Aphotopontius_probolus,TM_pre,0
+Tica 2,Benthoxynus_tumidiseta,TM_pre,14.51
+Tica 2,Ceuthocetes_introversus,TM_pre,3.14
+Tica 2,Ceuthoecetes_acanthotrix,TM_pre,3.14
+Tica 2,Ceuthoecetes_aliger,TM_pre,1.96
+Tica 2,Ceuthoecetes_Nilva_juvenile,TM_pre,0
+Tica 2,copepodites,TM_pre,10.59
+Tica 2,Dirivultidae_juvenile,TM_pre,0
+Tica 2,Ecbathyrion_prolixicauda,TM_pre,0
+Tica 2,Nilva_torifera,TM_pre,0
+Tica 2,Rhogobius_sp,TM_pre,0
+Tica 2,Scotoecetes_introrsus,TM_pre,60.78
+Tica 2,Stygiopontius_appositus,TM_pre,0
+Tica 2,Stygiopontius_flexus,TM_pre,4.31
+Tica 2,Stygiopontius_hispidulus,TM_pre,1.18
+Tica 2,Stygiopontius_mucroniferus,TM_pre,0
+Tica 2,Stygiopontius_paxillifer ,TM_pre,0
+Tica 2,Stygiopontius_sentifer,TM_pre,0
+Tica 2,Stygiopontius_stabilitus,TM_pre,0
+Tica 3,Aphotopontius_acanthinus,TM_pre,10.19
+Tica 3,Aphotopontius_arcuatus,TM_pre,0
+Tica 3,Aphotopontius_flexispina,TM_pre,0.38
+Tica 3,Aphotopontius_hydronauticus ,TM_pre,8.68
+Tica 3,Aphotopontius_limatulus,TM_pre,0
+Tica 3,Aphotopontius_mammilatus,TM_pre,8.68
+Tica 3,Aphotopontius_probolus,TM_pre,6.79
+Tica 3,Benthoxynus_tumidiseta,TM_pre,1.13
+Tica 3,Ceuthocetes_introversus,TM_pre,12.45
+Tica 3,Ceuthoecetes_acanthotrix,TM_pre,13.21
+Tica 3,Ceuthoecetes_aliger,TM_pre,13.96
+Tica 3,Ceuthoecetes_Nilva_juvenile,TM_pre,0
+Tica 3,copepodites,TM_pre,19.24
+Tica 3,Dirivultidae_juvenile,TM_pre,0
+Tica 3,Ecbathyrion_prolixicauda,TM_pre,0
+Tica 3,Nilva_torifera,TM_pre,0
+Tica 3,Rhogobius_sp,TM_pre,2.64
+Tica 3,Scotoecetes_introrsus,TM_pre,1.51
+Tica 3,Stygiopontius_appositus,TM_pre,0
+Tica 3,Stygiopontius_flexus,TM_pre,1.13
+Tica 3,Stygiopontius_hispidulus,TM_pre,0
+Tica 3,Stygiopontius_mucroniferus,TM_pre,0
+Tica 3,Stygiopontius_paxillifer ,TM_pre,0
+Tica 3,Stygiopontius_sentifer,TM_pre,0
+Tica 3,Stygiopontius_stabilitus,TM_pre,0
+Riftia Field 1,Aphotopontius_acanthinus,TM_pre,0
+Riftia Field 1,Aphotopontius_arcuatus,TM_pre,0
+Riftia Field 1,Aphotopontius_flexispina,TM_pre,0
+Riftia Field 1,Aphotopontius_hydronauticus ,TM_pre,5.26
+Riftia Field 1,Aphotopontius_limatulus,TM_pre,0
+Riftia Field 1,Aphotopontius_mammilatus,TM_pre,0
+Riftia Field 1,Aphotopontius_probolus,TM_pre,10.53
+Riftia Field 1,Benthoxynus_tumidiseta,TM_pre,0
+Riftia Field 1,Ceuthocetes_introversus,TM_pre,0
+Riftia Field 1,Ceuthoecetes_acanthotrix,TM_pre,0
+Riftia Field 1,Ceuthoecetes_aliger,TM_pre,0
+Riftia Field 1,Ceuthoecetes_Nilva_juvenile,TM_pre,0
+Riftia Field 1,copepodites,TM_pre,5.26
+Riftia Field 1,Dirivultidae_juvenile,TM_pre,0
+Riftia Field 1,Ecbathyrion_prolixicauda,TM_pre,0
+Riftia Field 1,Nilva_torifera,TM_pre,0
+Riftia Field 1,Rhogobius_sp,TM_pre,0
+Riftia Field 1,Scotoecetes_introrsus,TM_pre,57.89
+Riftia Field 1,Stygiopontius_appositus,TM_pre,0
+Riftia Field 1,Stygiopontius_flexus,TM_pre,21.05
+Riftia Field 1,Stygiopontius_hispidulus,TM_pre,0
+Riftia Field 1,Stygiopontius_mucroniferus,TM_pre,0
+Riftia Field 1,Stygiopontius_paxillifer ,TM_pre,0
+Riftia Field 1,Stygiopontius_sentifer,TM_pre,0
+Riftia Field 1,Stygiopontius_stabilitus,TM_pre,0
+Riftia Field 2,Aphotopontius_acanthinus,TM_pre,0
+Riftia Field 2,Aphotopontius_arcuatus,TM_pre,0
+Riftia Field 2,Aphotopontius_flexispina,TM_pre,0
+Riftia Field 2,Aphotopontius_hydronauticus ,TM_pre,0
+Riftia Field 2,Aphotopontius_limatulus,TM_pre,0
+Riftia Field 2,Aphotopontius_mammilatus,TM_pre,0
+Riftia Field 2,Aphotopontius_probolus,TM_pre,0
+Riftia Field 2,Benthoxynus_tumidiseta,TM_pre,34.88
+Riftia Field 2,Ceuthocetes_introversus,TM_pre,23.26
+Riftia Field 2,Ceuthoecetes_acanthotrix,TM_pre,0
+Riftia Field 2,Ceuthoecetes_aliger,TM_pre,0
+Riftia Field 2,Ceuthoecetes_Nilva_juvenile,TM_pre,0
+Riftia Field 2,copepodites,TM_pre,25.58
+Riftia Field 2,Dirivultidae_juvenile,TM_pre,0
+Riftia Field 2,Ecbathyrion_prolixicauda,TM_pre,0
+Riftia Field 2,Nilva_torifera,TM_pre,0
+Riftia Field 2,Rhogobius_sp,TM_pre,0
+Riftia Field 2,Scotoecetes_introrsus,TM_pre,13.95
+Riftia Field 2,Stygiopontius_appositus,TM_pre,0
+Riftia Field 2,Stygiopontius_flexus,TM_pre,2.33
+Riftia Field 2,Stygiopontius_hispidulus,TM_pre,0
+Riftia Field 2,Stygiopontius_mucroniferus,TM_pre,0
+Riftia Field 2,Stygiopontius_paxillifer ,TM_pre,0
+Riftia Field 2,Stygiopontius_sentifer,TM_pre,0
+Riftia Field 2,Stygiopontius_stabilitus,TM_pre,0
+Riftia Field 3,Aphotopontius_acanthinus,TM_pre,0
+Riftia Field 3,Aphotopontius_arcuatus,TM_pre,0
+Riftia Field 3,Aphotopontius_flexispina,TM_pre,0
+Riftia Field 3,Aphotopontius_hydronauticus ,TM_pre,4.35
+Riftia Field 3,Aphotopontius_limatulus,TM_pre,0
+Riftia Field 3,Aphotopontius_mammilatus,TM_pre,1.45
+Riftia Field 3,Aphotopontius_probolus,TM_pre,1.45
+Riftia Field 3,Benthoxynus_tumidiseta,TM_pre,0
+Riftia Field 3,Ceuthocetes_introversus,TM_pre,4.35
+Riftia Field 3,Ceuthoecetes_acanthotrix,TM_pre,4.35
+Riftia Field 3,Ceuthoecetes_aliger,TM_pre,5.8
+Riftia Field 3,Ceuthoecetes_Nilva_juvenile,TM_pre,0
+Riftia Field 3,copepodites,TM_pre,24.64
+Riftia Field 3,Dirivultidae_juvenile,TM_pre,0
+Riftia Field 3,Ecbathyrion_prolixicauda,TM_pre,0
+Riftia Field 3,Nilva_torifera,TM_pre,0
+Riftia Field 3,Rhogobius_sp,TM_pre,0
+Riftia Field 3,Scotoecetes_introrsus,TM_pre,36.97
+Riftia Field 3,Stygiopontius_appositus,TM_pre,0
+Riftia Field 3,Stygiopontius_flexus,TM_pre,8.7
+Riftia Field 3,Stygiopontius_hispidulus,TM_pre,6.52
+Riftia Field 3,Stygiopontius_mucroniferus,TM_pre,0.72
+Riftia Field 3,Stygiopontius_paxillifer ,TM_pre,0
+Riftia Field 3,Stygiopontius_sentifer,TM_pre,0
+Riftia Field 3,Stygiopontius_stabilitus,TM_pre,0.72
+Sketchy 1,Aphotopontius_acanthinus,TM_post,0
+Sketchy 1,Aphotopontius_arcuatus,TM_post,0
+Sketchy 1,Aphotopontius_flexispina,TM_post,0
+Sketchy 1,Aphotopontius_hydronauticus ,TM_post,0
+Sketchy 1,Aphotopontius_limatulus,TM_post,40
+Sketchy 1,Aphotopontius_mammilatus,TM_post,20
+Sketchy 1,Aphotopontius_probolus,TM_post,0
+Sketchy 1,Benthoxynus_tumidiseta,TM_post,10
+Sketchy 1,Ceuthocetes_introversus,TM_post,0
+Sketchy 1,Ceuthoecetes_acanthotrix,TM_post,0
+Sketchy 1,Ceuthoecetes_aliger,TM_post,0
+Sketchy 1,Ceuthoecetes_Nilva_juvenile,TM_post,0
+Sketchy 1,copepodites,TM_post,0
+Sketchy 1,Dirivultidae_juvenile,TM_post,30
+Sketchy 1,Ecbathyrion_prolixicauda,TM_post,0
+Sketchy 1,Nilva_torifera,TM_post,0
+Sketchy 1,Rhogobius_sp,TM_post,0
+Sketchy 1,Scotoecetes_introrsus,TM_post,0
+Sketchy 1,Stygiopontius_appositus,TM_post,0
+Sketchy 1,Stygiopontius_flexus,TM_post,0
+Sketchy 1,Stygiopontius_hispidulus,TM_post,0
+Sketchy 1,Stygiopontius_mucroniferus,TM_post,0
+Sketchy 1,Stygiopontius_paxillifer ,TM_post,0
+Sketchy 1,Stygiopontius_sentifer,TM_post,0
+Sketchy 1,Stygiopontius_stabilitus,TM_post,0
+Sketchy 2,Aphotopontius_acanthinus,TM_post,25
+Sketchy 2,Aphotopontius_arcuatus,TM_post,0
+Sketchy 2,Aphotopontius_flexispina,TM_post,0
+Sketchy 2,Aphotopontius_hydronauticus ,TM_post,0
+Sketchy 2,Aphotopontius_limatulus,TM_post,37.5
+Sketchy 2,Aphotopontius_mammilatus,TM_post,12.5
+Sketchy 2,Aphotopontius_probolus,TM_post,0
+Sketchy 2,Benthoxynus_tumidiseta,TM_post,0
+Sketchy 2,Ceuthocetes_introversus,TM_post,0
+Sketchy 2,Ceuthoecetes_acanthotrix,TM_post,0
+Sketchy 2,Ceuthoecetes_aliger,TM_post,0
+Sketchy 2,Ceuthoecetes_Nilva_juvenile,TM_post,0
+Sketchy 2,copepodites,TM_post,0
+Sketchy 2,Dirivultidae_juvenile,TM_post,25
+Sketchy 2,Ecbathyrion_prolixicauda,TM_post,0
+Sketchy 2,Nilva_torifera,TM_post,0
+Sketchy 2,Rhogobius_sp,TM_post,0
+Sketchy 2,Scotoecetes_introrsus,TM_post,0
+Sketchy 2,Stygiopontius_appositus,TM_post,0
+Sketchy 2,Stygiopontius_flexus,TM_post,0
+Sketchy 2,Stygiopontius_hispidulus,TM_post,0
+Sketchy 2,Stygiopontius_mucroniferus,TM_post,0
+Sketchy 2,Stygiopontius_paxillifer ,TM_post,0
+Sketchy 2,Stygiopontius_sentifer,TM_post,0
+Sketchy 2,Stygiopontius_stabilitus,TM_post,0
+Sketchy 3,Aphotopontius_acanthinus,TM_post,20
+Sketchy 3,Aphotopontius_arcuatus,TM_post,0
+Sketchy 3,Aphotopontius_flexispina,TM_post,0
+Sketchy 3,Aphotopontius_hydronauticus ,TM_post,0
+Sketchy 3,Aphotopontius_limatulus,TM_post,20
+Sketchy 3,Aphotopontius_mammilatus,TM_post,20
+Sketchy 3,Aphotopontius_probolus,TM_post,0
+Sketchy 3,Benthoxynus_tumidiseta,TM_post,20
+Sketchy 3,Ceuthocetes_introversus,TM_post,0
+Sketchy 3,Ceuthoecetes_acanthotrix,TM_post,0
+Sketchy 3,Ceuthoecetes_aliger,TM_post,0
+Sketchy 3,Ceuthoecetes_Nilva_juvenile,TM_post,0
+Sketchy 3,copepodites,TM_post,0
+Sketchy 3,Dirivultidae_juvenile,TM_post,20
+Sketchy 3,Ecbathyrion_prolixicauda,TM_post,0
+Sketchy 3,Nilva_torifera,TM_post,0
+Sketchy 3,Rhogobius_sp,TM_post,0
+Sketchy 3,Scotoecetes_introrsus,TM_post,0
+Sketchy 3,Stygiopontius_appositus,TM_post,0
+Sketchy 3,Stygiopontius_flexus,TM_post,0
+Sketchy 3,Stygiopontius_hispidulus,TM_post,0
+Sketchy 3,Stygiopontius_mucroniferus,TM_post,0
+Sketchy 3,Stygiopontius_paxillifer ,TM_post,0
+Sketchy 3,Stygiopontius_sentifer,TM_post,0
+Sketchy 3,Stygiopontius_stabilitus,TM_post,0
+P Vent 1,Aphotopontius_acanthinus,TM_post,27.55
+P Vent 1,Aphotopontius_arcuatus,TM_post,0
+P Vent 1,Aphotopontius_flexispina,TM_post,0
+P Vent 1,Aphotopontius_hydronauticus ,TM_post,0
+P Vent 1,Aphotopontius_limatulus,TM_post,0
+P Vent 1,Aphotopontius_mammilatus,TM_post,0
+P Vent 1,Aphotopontius_probolus,TM_post,0
+P Vent 1,Benthoxynus_tumidiseta,TM_post,53.06
+P Vent 1,Ceuthocetes_introversus,TM_post,0
+P Vent 1,Ceuthoecetes_acanthotrix,TM_post,0
+P Vent 1,Ceuthoecetes_aliger,TM_post,0
+P Vent 1,Ceuthoecetes_Nilva_juvenile,TM_post,0
+P Vent 1,copepodites,TM_post,0
+P Vent 1,Dirivultidae_juvenile,TM_post,0
+P Vent 1,Ecbathyrion_prolixicauda,TM_post,0
+P Vent 1,Nilva_torifera,TM_post,0
+P Vent 1,Rhogobius_sp,TM_post,0
+P Vent 1,Scotoecetes_introrsus,TM_post,17.86
+P Vent 1,Stygiopontius_appositus,TM_post,0
+P Vent 1,Stygiopontius_flexus,TM_post,1.02
+P Vent 1,Stygiopontius_hispidulus,TM_post,0.51
+P Vent 1,Stygiopontius_mucroniferus,TM_post,0
+P Vent 1,Stygiopontius_paxillifer ,TM_post,0
+P Vent 1,Stygiopontius_sentifer,TM_post,0
+P Vent 1,Stygiopontius_stabilitus,TM_post,0
+P Vent 2,Aphotopontius_acanthinus,TM_post,2.56
+P Vent 2,Aphotopontius_arcuatus,TM_post,0
+P Vent 2,Aphotopontius_flexispina,TM_post,0
+P Vent 2,Aphotopontius_hydronauticus ,TM_post,0
+P Vent 2,Aphotopontius_limatulus,TM_post,0
+P Vent 2,Aphotopontius_mammilatus,TM_post,0
+P Vent 2,Aphotopontius_probolus,TM_post,0
+P Vent 2,Benthoxynus_tumidiseta,TM_post,56.41
+P Vent 2,Ceuthocetes_introversus,TM_post,0
+P Vent 2,Ceuthoecetes_acanthotrix,TM_post,0
+P Vent 2,Ceuthoecetes_aliger,TM_post,0
+P Vent 2,Ceuthoecetes_Nilva_juvenile,TM_post,0
+P Vent 2,copepodites,TM_post,0
+P Vent 2,Dirivultidae_juvenile,TM_post,0.51
+P Vent 2,Ecbathyrion_prolixicauda,TM_post,0
+P Vent 2,Nilva_torifera,TM_post,0
+P Vent 2,Rhogobius_sp,TM_post,0
+P Vent 2,Scotoecetes_introrsus,TM_post,40
+P Vent 2,Stygiopontius_appositus,TM_post,0
+P Vent 2,Stygiopontius_flexus,TM_post,0.51
+P Vent 2,Stygiopontius_hispidulus,TM_post,0
+P Vent 2,Stygiopontius_mucroniferus,TM_post,0
+P Vent 2,Stygiopontius_paxillifer ,TM_post,0
+P Vent 2,Stygiopontius_sentifer,TM_post,0
+P Vent 2,Stygiopontius_stabilitus,TM_post,0
+P Vent 3,Aphotopontius_acanthinus,TM_post,94.97
+P Vent 3,Aphotopontius_arcuatus,TM_post,0
+P Vent 3,Aphotopontius_flexispina,TM_post,0
+P Vent 3,Aphotopontius_hydronauticus ,TM_post,0
+P Vent 3,Aphotopontius_limatulus,TM_post,0
+P Vent 3,Aphotopontius_mammilatus,TM_post,0
+P Vent 3,Aphotopontius_probolus,TM_post,0
+P Vent 3,Benthoxynus_tumidiseta,TM_post,0.5
+P Vent 3,Ceuthocetes_introversus,TM_post,0
+P Vent 3,Ceuthoecetes_acanthotrix,TM_post,0
+P Vent 3,Ceuthoecetes_aliger,TM_post,0
+P Vent 3,Ceuthoecetes_Nilva_juvenile,TM_post,0
+P Vent 3,copepodites,TM_post,0
+P Vent 3,Dirivultidae_juvenile,TM_post,1
+P Vent 3,Ecbathyrion_prolixicauda,TM_post,0
+P Vent 3,Nilva_torifera,TM_post,0
+P Vent 3,Rhogobius_sp,TM_post,0
+P Vent 3,Scotoecetes_introrsus,TM_post,3.52
+P Vent 3,Stygiopontius_appositus,TM_post,0
+P Vent 3,Stygiopontius_flexus,TM_post,0
+P Vent 3,Stygiopontius_hispidulus,TM_post,0
+P Vent 3,Stygiopontius_mucroniferus,TM_post,0
+P Vent 3,Stygiopontius_paxillifer ,TM_post,0
+P Vent 3,Stygiopontius_sentifer,TM_post,0
+P Vent 3,Stygiopontius_stabilitus,TM_post,0
+P Vent 4,Aphotopontius_acanthinus,TM_post,10
+P Vent 4,Aphotopontius_arcuatus,TM_post,90
+P Vent 4,Aphotopontius_flexispina,TM_post,0
+P Vent 4,Aphotopontius_hydronauticus ,TM_post,0
+P Vent 4,Aphotopontius_limatulus,TM_post,0
+P Vent 4,Aphotopontius_mammilatus,TM_post,0
+P Vent 4,Aphotopontius_probolus,TM_post,0
+P Vent 4,Benthoxynus_tumidiseta,TM_post,0
+P Vent 4,Ceuthocetes_introversus,TM_post,0
+P Vent 4,Ceuthoecetes_acanthotrix,TM_post,0
+P Vent 4,Ceuthoecetes_aliger,TM_post,0
+P Vent 4,Ceuthoecetes_Nilva_juvenile,TM_post,0
+P Vent 4,copepodites,TM_post,0
+P Vent 4,Dirivultidae_juvenile,TM_post,0
+P Vent 4,Ecbathyrion_prolixicauda,TM_post,0
+P Vent 4,Nilva_torifera,TM_post,0
+P Vent 4,Rhogobius_sp,TM_post,0
+P Vent 4,Scotoecetes_introrsus,TM_post,0
+P Vent 4,Stygiopontius_appositus,TM_post,0
+P Vent 4,Stygiopontius_flexus,TM_post,0
+P Vent 4,Stygiopontius_hispidulus,TM_post,0
+P Vent 4,Stygiopontius_mucroniferus,TM_post,0
+P Vent 4,Stygiopontius_paxillifer ,TM_post,0
+P Vent 4,Stygiopontius_sentifer,TM_post,0
+P Vent 4,Stygiopontius_stabilitus,TM_post,0
+P Vent 5,Aphotopontius_acanthinus,TM_post,20
+P Vent 5,Aphotopontius_arcuatus,TM_post,80
+P Vent 5,Aphotopontius_flexispina,TM_post,0
+P Vent 5,Aphotopontius_hydronauticus ,TM_post,0
+P Vent 5,Aphotopontius_limatulus,TM_post,0
+P Vent 5,Aphotopontius_mammilatus,TM_post,0
+P Vent 5,Aphotopontius_probolus,TM_post,0
+P Vent 5,Benthoxynus_tumidiseta,TM_post,0
+P Vent 5,Ceuthocetes_introversus,TM_post,0
+P Vent 5,Ceuthoecetes_acanthotrix,TM_post,0
+P Vent 5,Ceuthoecetes_aliger,TM_post,0
+P Vent 5,Ceuthoecetes_Nilva_juvenile,TM_post,0
+P Vent 5,copepodites,TM_post,0
+P Vent 5,Dirivultidae_juvenile,TM_post,0
+P Vent 5,Ecbathyrion_prolixicauda,TM_post,0
+P Vent 5,Nilva_torifera,TM_post,0
+P Vent 5,Rhogobius_sp,TM_post,0
+P Vent 5,Scotoecetes_introrsus,TM_post,0
+P Vent 5,Stygiopontius_appositus,TM_post,0
+P Vent 5,Stygiopontius_flexus,TM_post,0
+P Vent 5,Stygiopontius_hispidulus,TM_post,0
+P Vent 5,Stygiopontius_mucroniferus,TM_post,0
+P Vent 5,Stygiopontius_paxillifer ,TM_post,0
+P Vent 5,Stygiopontius_sentifer,TM_post,0
+P Vent 5,Stygiopontius_stabilitus,TM_post,0
+P Vent 6,Aphotopontius_acanthinus,TM_post,100
+P Vent 7,Aphotopontius_arcuatus,TM_post,0
+P Vent 8,Aphotopontius_flexispina,TM_post,0
+P Vent 9,Aphotopontius_hydronauticus ,TM_post,0
+P Vent 10,Aphotopontius_limatulus,TM_post,0
+P Vent 11,Aphotopontius_mammilatus,TM_post,0
+P Vent 12,Aphotopontius_probolus,TM_post,0
+P Vent 13,Benthoxynus_tumidiseta,TM_post,0
+P Vent 14,Ceuthocetes_introversus,TM_post,0
+P Vent 15,Ceuthoecetes_acanthotrix,TM_post,0
+P Vent 16,Ceuthoecetes_aliger,TM_post,0
+P Vent 17,Ceuthoecetes_Nilva_juvenile,TM_post,0
+P Vent 18,copepodites,TM_post,0
+P Vent 19,Dirivultidae_juvenile,TM_post,0
+P Vent 20,Ecbathyrion_prolixicauda,TM_post,0
+P Vent 21,Nilva_torifera,TM_post,0
+P Vent 22,Rhogobius_sp,TM_post,0
+P Vent 23,Scotoecetes_introrsus,TM_post,0
+P Vent 24,Stygiopontius_appositus,TM_post,0
+P Vent 25,Stygiopontius_flexus,TM_post,0
+P Vent 26,Stygiopontius_hispidulus,TM_post,0
+P Vent 27,Stygiopontius_mucroniferus,TM_post,0
+P Vent 28,Stygiopontius_paxillifer ,TM_post,0
+P Vent 29,Stygiopontius_sentifer,TM_post,0
+P Vent 30,Stygiopontius_stabilitus,TM_post,0
+Tica 4,Aphotopontius_acanthinus,TM_post,97.5
+Tica 4,Aphotopontius_arcuatus,TM_post,0
+Tica 4,Aphotopontius_flexispina,TM_post,0
+Tica 4,Aphotopontius_hydronauticus ,TM_post,0
+Tica 4,Aphotopontius_limatulus,TM_post,0
+Tica 4,Aphotopontius_mammilatus,TM_post,0
+Tica 4,Aphotopontius_probolus,TM_post,0
+Tica 4,Benthoxynus_tumidiseta,TM_post,0
+Tica 4,Ceuthocetes_introversus,TM_post,0
+Tica 4,Ceuthoecetes_acanthotrix,TM_post,0
+Tica 4,Ceuthoecetes_aliger,TM_post,0
+Tica 4,Ceuthoecetes_Nilva_juvenile,TM_post,0
+Tica 4,copepodites,TM_post,0
+Tica 4,Dirivultidae_juvenile,TM_post,2.5
+Tica 4,Ecbathyrion_prolixicauda,TM_post,0
+Tica 4,Nilva_torifera,TM_post,0
+Tica 4,Rhogobius_sp,TM_post,0
+Tica 4,Scotoecetes_introrsus,TM_post,0
+Tica 4,Stygiopontius_appositus,TM_post,0
+Tica 4,Stygiopontius_flexus,TM_post,0
+Tica 4,Stygiopontius_hispidulus,TM_post,0
+Tica 4,Stygiopontius_mucroniferus,TM_post,0
+Tica 4,Stygiopontius_paxillifer ,TM_post,0
+Tica 4,Stygiopontius_sentifer,TM_post,0
+Tica 4,Stygiopontius_stabilitus,TM_post,0
+Tica 5,Aphotopontius_acanthinus,TM_post,11.76
+Tica 5,Aphotopontius_arcuatus,TM_post,0
+Tica 5,Aphotopontius_flexispina,TM_post,0
+Tica 5,Aphotopontius_hydronauticus ,TM_post,0
+Tica 5,Aphotopontius_limatulus,TM_post,0
+Tica 5,Aphotopontius_mammilatus,TM_post,0
+Tica 5,Aphotopontius_probolus,TM_post,0
+Tica 5,Benthoxynus_tumidiseta,TM_post,0
+Tica 5,Ceuthocetes_introversus,TM_post,0
+Tica 5,Ceuthoecetes_acanthotrix,TM_post,0
+Tica 5,Ceuthoecetes_aliger,TM_post,0
+Tica 5,Ceuthoecetes_Nilva_juvenile,TM_post,0
+Tica 5,copepodites,TM_post,0
+Tica 5,Dirivultidae_juvenile,TM_post,47.06
+Tica 5,Ecbathyrion_prolixicauda,TM_post,5.88
+Tica 5,Nilva_torifera,TM_post,0
+Tica 5,Rhogobius_sp,TM_post,0
+Tica 5,Scotoecetes_introrsus,TM_post,0
+Tica 5,Stygiopontius_appositus,TM_post,0
+Tica 5,Stygiopontius_flexus,TM_post,0
+Tica 5,Stygiopontius_hispidulus,TM_post,35.29
+Tica 5,Stygiopontius_mucroniferus,TM_post,0
+Tica 5,Stygiopontius_paxillifer ,TM_post,0
+Tica 5,Stygiopontius_sentifer,TM_post,0
+Tica 5,Stygiopontius_stabilitus,TM_post,0
+Tica 6,Aphotopontius_acanthinus,TM_post,94
+Tica 6,Aphotopontius_arcuatus,TM_post,0
+Tica 6,Aphotopontius_flexispina,TM_post,0
+Tica 6,Aphotopontius_hydronauticus ,TM_post,0
+Tica 6,Aphotopontius_limatulus,TM_post,2
+Tica 6,Aphotopontius_mammilatus,TM_post,0
+Tica 6,Aphotopontius_probolus,TM_post,0
+Tica 6,Benthoxynus_tumidiseta,TM_post,0
+Tica 6,Ceuthocetes_introversus,TM_post,0
+Tica 6,Ceuthoecetes_acanthotrix,TM_post,0
+Tica 6,Ceuthoecetes_aliger,TM_post,0
+Tica 6,Ceuthoecetes_Nilva_juvenile,TM_post,0
+Tica 6,copepodites,TM_post,0
+Tica 6,Dirivultidae_juvenile,TM_post,4
+Tica 6,Ecbathyrion_prolixicauda,TM_post,0
+Tica 6,Nilva_torifera,TM_post,0
+Tica 6,Rhogobius_sp,TM_post,0
+Tica 6,Scotoecetes_introrsus,TM_post,0
+Tica 6,Stygiopontius_appositus,TM_post,0
+Tica 6,Stygiopontius_flexus,TM_post,0
+Tica 6,Stygiopontius_hispidulus,TM_post,0
+Tica 6,Stygiopontius_mucroniferus,TM_post,0
+Tica 6,Stygiopontius_paxillifer ,TM_post,0
+Tica 6,Stygiopontius_sentifer,TM_post,0
+Tica 6,Stygiopontius_stabilitus,TM_post,0
+Tica 7,Aphotopontius_acanthinus,TM_post,0
+Tica 7,Aphotopontius_arcuatus,TM_post,5.26
+Tica 7,Aphotopontius_flexispina,TM_post,0
+Tica 7,Aphotopontius_hydronauticus ,TM_post,0
+Tica 7,Aphotopontius_limatulus,TM_post,5.26
+Tica 7,Aphotopontius_mammilatus,TM_post,0
+Tica 7,Aphotopontius_probolus,TM_post,0
+Tica 7,Benthoxynus_tumidiseta,TM_post,0
+Tica 7,Ceuthocetes_introversus,TM_post,0
+Tica 7,Ceuthoecetes_acanthotrix,TM_post,0
+Tica 7,Ceuthoecetes_aliger,TM_post,0
+Tica 7,Ceuthoecetes_Nilva_juvenile,TM_post,0
+Tica 7,copepodites,TM_post,0
+Tica 7,Dirivultidae_juvenile,TM_post,57.89
+Tica 7,Ecbathyrion_prolixicauda,TM_post,21.05
+Tica 7,Nilva_torifera,TM_post,0
+Tica 7,Rhogobius_sp,TM_post,0
+Tica 7,Scotoecetes_introrsus,TM_post,10.53
+Tica 7,Stygiopontius_appositus,TM_post,0
+Tica 7,Stygiopontius_flexus,TM_post,0
+Tica 7,Stygiopontius_hispidulus,TM_post,0
+Tica 7,Stygiopontius_mucroniferus,TM_post,0
+Tica 7,Stygiopontius_paxillifer ,TM_post,0
+Tica 7,Stygiopontius_sentifer,TM_post,0
+Tica 7,Stygiopontius_stabilitus,TM_post,0
+Tica 8,Aphotopontius_acanthinus,TM_post,0
+Tica 8,Aphotopontius_arcuatus,TM_post,0
+Tica 8,Aphotopontius_flexispina,TM_post,0
+Tica 8,Aphotopontius_hydronauticus ,TM_post,0
+Tica 8,Aphotopontius_limatulus,TM_post,0
+Tica 8,Aphotopontius_mammilatus,TM_post,0
+Tica 8,Aphotopontius_probolus,TM_post,0
+Tica 8,Benthoxynus_tumidiseta,TM_post,0
+Tica 8,Ceuthocetes_introversus,TM_post,0
+Tica 8,Ceuthoecetes_acanthotrix,TM_post,0
+Tica 8,Ceuthoecetes_aliger,TM_post,0
+Tica 8,Ceuthoecetes_Nilva_juvenile,TM_post,0
+Tica 8,copepodites,TM_post,0
+Tica 8,Dirivultidae_juvenile,TM_post,100
+Tica 8,Ecbathyrion_prolixicauda,TM_post,0
+Tica 8,Nilva_torifera,TM_post,0
+Tica 8,Rhogobius_sp,TM_post,0
+Tica 8,Scotoecetes_introrsus,TM_post,0
+Tica 8,Stygiopontius_appositus,TM_post,0
+Tica 8,Stygiopontius_flexus,TM_post,0
+Tica 8,Stygiopontius_hispidulus,TM_post,0
+Tica 8,Stygiopontius_mucroniferus,TM_post,0
+Tica 8,Stygiopontius_paxillifer ,TM_post,0
+Tica 8,Stygiopontius_sentifer,TM_post,0
+Tica 8,Stygiopontius_stabilitus,TM_post,0
+Tica 9,Aphotopontius_acanthinus,TM_post,0
+Tica 9,Aphotopontius_arcuatus,TM_post,9.09
+Tica 9,Aphotopontius_flexispina,TM_post,0
+Tica 9,Aphotopontius_hydronauticus ,TM_post,0
+Tica 9,Aphotopontius_limatulus,TM_post,0
+Tica 9,Aphotopontius_mammilatus,TM_post,0
+Tica 9,Aphotopontius_probolus,TM_post,0
+Tica 9,Benthoxynus_tumidiseta,TM_post,0
+Tica 9,Ceuthocetes_introversus,TM_post,0
+Tica 9,Ceuthoecetes_acanthotrix,TM_post,0
+Tica 9,Ceuthoecetes_aliger,TM_post,0
+Tica 9,Ceuthoecetes_Nilva_juvenile,TM_post,0
+Tica 9,copepodites,TM_post,0
+Tica 9,Dirivultidae_juvenile,TM_post,81.82
+Tica 9,Ecbathyrion_prolixicauda,TM_post,0
+Tica 9,Nilva_torifera,TM_post,0
+Tica 9,Rhogobius_sp,TM_post,0
+Tica 9,Scotoecetes_introrsus,TM_post,9.09
+Tica 9,Stygiopontius_appositus,TM_post,0
+Tica 9,Stygiopontius_flexus,TM_post,0
+Tica 9,Stygiopontius_hispidulus,TM_post,0
+Tica 9,Stygiopontius_mucroniferus,TM_post,0
+Tica 9,Stygiopontius_paxillifer ,TM_post,0
+Tica 9,Stygiopontius_sentifer,TM_post,0
+Tica 9,Stygiopontius_stabilitus,TM_post,0
+Tica 10,Aphotopontius_acanthinus,TM_post,7.89
+Tica 10,Aphotopontius_arcuatus,TM_post,0
+Tica 10,Aphotopontius_flexispina,TM_post,0
+Tica 10,Aphotopontius_hydronauticus ,TM_post,0
+Tica 10,Aphotopontius_limatulus,TM_post,2.63
+Tica 10,Aphotopontius_mammilatus,TM_post,44.74
+Tica 10,Aphotopontius_probolus,TM_post,0
+Tica 10,Benthoxynus_tumidiseta,TM_post,0
+Tica 10,Ceuthocetes_introversus,TM_post,0
+Tica 10,Ceuthoecetes_acanthotrix,TM_post,7.89
+Tica 10,Ceuthoecetes_aliger,TM_post,0
+Tica 10,Ceuthoecetes_Nilva_juvenile,TM_post,21.05
+Tica 10,copepodites,TM_post,0
+Tica 10,Dirivultidae_juvenile,TM_post,7.89
+Tica 10,Ecbathyrion_prolixicauda,TM_post,0
+Tica 10,Nilva_torifera,TM_post,7.89
+Tica 10,Rhogobius_sp,TM_post,0
+Tica 10,Scotoecetes_introrsus,TM_post,0
+Tica 10,Stygiopontius_appositus,TM_post,0
+Tica 10,Stygiopontius_flexus,TM_post,0
+Tica 10,Stygiopontius_hispidulus,TM_post,0
+Tica 10,Stygiopontius_mucroniferus,TM_post,0
+Tica 10,Stygiopontius_paxillifer ,TM_post,0
+Tica 10,Stygiopontius_sentifer,TM_post,0
+Tica 10,Stygiopontius_stabilitus,TM_post,0
+Tica 11,Aphotopontius_acanthinus,TM_post,11.11
+Tica 11,Aphotopontius_arcuatus,TM_post,11.11
+Tica 11,Aphotopontius_flexispina,TM_post,0
+Tica 11,Aphotopontius_hydronauticus ,TM_post,0
+Tica 11,Aphotopontius_limatulus,TM_post,33.33
+Tica 11,Aphotopontius_mammilatus,TM_post,0
+Tica 11,Aphotopontius_probolus,TM_post,0
+Tica 11,Benthoxynus_tumidiseta,TM_post,0
+Tica 11,Ceuthocetes_introversus,TM_post,0
+Tica 11,Ceuthoecetes_acanthotrix,TM_post,0
+Tica 11,Ceuthoecetes_aliger,TM_post,0
+Tica 11,Ceuthoecetes_Nilva_juvenile,TM_post,0
+Tica 11,copepodites,TM_post,0
+Tica 11,Dirivultidae_juvenile,TM_post,44.44
+Tica 11,Ecbathyrion_prolixicauda,TM_post,0
+Tica 11,Nilva_torifera,TM_post,0
+Tica 11,Rhogobius_sp,TM_post,0
+Tica 11,Scotoecetes_introrsus,TM_post,0
+Tica 11,Stygiopontius_appositus,TM_post,0
+Tica 11,Stygiopontius_flexus,TM_post,0
+Tica 11,Stygiopontius_hispidulus,TM_post,0
+Tica 11,Stygiopontius_mucroniferus,TM_post,0
+Tica 11,Stygiopontius_paxillifer ,TM_post,0
+Tica 11,Stygiopontius_sentifer,TM_post,0
+Tica 11,Stygiopontius_stabilitus,TM_post,0
+Tica 12,Aphotopontius_acanthinus,TM_post,0
+Tica 12,Aphotopontius_arcuatus,TM_post,0
+Tica 12,Aphotopontius_flexispina,TM_post,0
+Tica 12,Aphotopontius_hydronauticus ,TM_post,0
+Tica 12,Aphotopontius_limatulus,TM_post,0
+Tica 12,Aphotopontius_mammilatus,TM_post,33.33
+Tica 12,Aphotopontius_probolus,TM_post,0
+Tica 12,Benthoxynus_tumidiseta,TM_post,0
+Tica 12,Ceuthocetes_introversus,TM_post,0
+Tica 12,Ceuthoecetes_acanthotrix,TM_post,33.33
+Tica 12,Ceuthoecetes_aliger,TM_post,0
+Tica 12,Ceuthoecetes_Nilva_juvenile,TM_post,0
+Tica 12,copepodites,TM_post,0
+Tica 12,Dirivultidae_juvenile,TM_post,33.33
+Tica 12,Ecbathyrion_prolixicauda,TM_post,0
+Tica 12,Nilva_torifera,TM_post,0
+Tica 12,Rhogobius_sp,TM_post,0
+Tica 12,Scotoecetes_introrsus,TM_post,0
+Tica 12,Stygiopontius_appositus,TM_post,0
+Tica 12,Stygiopontius_flexus,TM_post,0
+Tica 12,Stygiopontius_hispidulus,TM_post,0
+Tica 12,Stygiopontius_mucroniferus,TM_post,0
+Tica 12,Stygiopontius_paxillifer ,TM_post,0
+Tica 12,Stygiopontius_sentifer,TM_post,0
+Tica 12,Stygiopontius_stabilitus,TM_post,0
+Tica 13,Aphotopontius_acanthinus,TM_post,6
+Tica 13,Aphotopontius_arcuatus,TM_post,0
+Tica 13,Aphotopontius_flexispina,TM_post,0
+Tica 13,Aphotopontius_hydronauticus ,TM_post,0
+Tica 13,Aphotopontius_limatulus,TM_post,0
+Tica 13,Aphotopontius_mammilatus,TM_post,0
+Tica 13,Aphotopontius_probolus,TM_post,0
+Tica 13,Benthoxynus_tumidiseta,TM_post,0
+Tica 13,Ceuthocetes_introversus,TM_post,0
+Tica 13,Ceuthoecetes_acanthotrix,TM_post,0
+Tica 13,Ceuthoecetes_aliger,TM_post,0
+Tica 13,Ceuthoecetes_Nilva_juvenile,TM_post,0
+Tica 13,copepodites,TM_post,0
+Tica 13,Dirivultidae_juvenile,TM_post,1.5
+Tica 13,Ecbathyrion_prolixicauda,TM_post,0
+Tica 13,Nilva_torifera,TM_post,0
+Tica 13,Rhogobius_sp,TM_post,0
+Tica 13,Scotoecetes_introrsus,TM_post,0
+Tica 13,Stygiopontius_appositus,TM_post,0
+Tica 13,Stygiopontius_flexus,TM_post,0
+Tica 13,Stygiopontius_hispidulus,TM_post,92.5
+Tica 13,Stygiopontius_mucroniferus,TM_post,0
+Tica 13,Stygiopontius_paxillifer ,TM_post,0
+Tica 13,Stygiopontius_sentifer,TM_post,0
+Tica 13,Stygiopontius_stabilitus,TM_post,0
