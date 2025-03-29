@@ -1,54 +1,54 @@
 ﻿Site,Species,Habitat,Abundance
-SUBLIFE,Aphotopontius_acanthinus,PW_2023,0
-SUBLIFE,Aphotopontius_arcuatus,PW_2023,0
-SUBLIFE,Aphotopontius_flexispina,PW_2023,0
-SUBLIFE,Aphotopontius_hydronauticus ,PW_2023,0
-SUBLIFE,Aphotopontius_limatulus,PW_2023,0
-SUBLIFE,Aphotopontius_mammilatus,PW_2023,0
-SUBLIFE,Aphotopontius_probolus,PW_2023,0
-SUBLIFE,Benthoxynus_tumidiseta,PW_2023,0
-SUBLIFE,Ceuthocetes_introversus,PW_2023,0
-SUBLIFE,Ceuthoecetes_acanthotrix,PW_2023,1.25
-SUBLIFE,Ceuthoecetes_aliger,PW_2023,0
-SUBLIFE,Ceuthoecetes_Nilva_juvenile,PW_2023,0
-SUBLIFE,copepodites,PW_2023,0
-SUBLIFE,Dirivultidae_juvenile,PW_2023,0
-SUBLIFE,Ecbathyrion_prolixicauda,PW_2023,0
-SUBLIFE,Nilva_torifera,PW_2023,0.5
-SUBLIFE,Rhogobius_sp,PW_2023,0
-SUBLIFE,Scotoecetes_introrsus,PW_2023,0
-SUBLIFE,Stygiopontius_appositus,PW_2023,5.25
-SUBLIFE,Stygiopontius_flexus,PW_2023,0
-SUBLIFE,Stygiopontius_hispidulus,PW_2023,92.42
-SUBLIFE,Stygiopontius_mucroniferus,PW_2023,0
-SUBLIFE,Stygiopontius_paxillifer ,PW_2023,0
-SUBLIFE,Stygiopontius_sentifer,PW_2023,0.58
-SUBLIFE,Stygiopontius_stabilitus,PW_2023,0
-SUBLIFE,Aphotopontius_acanthinus,TM_2023,2.03
-SUBLIFE,Aphotopontius_arcuatus,TM_2023,0.68
-SUBLIFE,Aphotopontius_flexispina,TM_2023,0
-SUBLIFE,Aphotopontius_hydronauticus ,TM_2023,0
-SUBLIFE,Aphotopontius_limatulus,TM_2023,0.66
-SUBLIFE,Aphotopontius_mammilatus,TM_2023,32.81
-SUBLIFE,Aphotopontius_probolus,TM_2023,0
-SUBLIFE,Benthoxynus_tumidiseta,TM_2023,0
-SUBLIFE,Ceuthocetes_introversus,TM_2023,0
-SUBLIFE,Ceuthoecetes_acanthotrix,TM_2023,36.98
-SUBLIFE,Ceuthoecetes_aliger,TM_2023,0
-SUBLIFE,Ceuthoecetes_Nilva_juvenile,TM_2023,0
-SUBLIFE,copepodites,TM_2023,2.25
-SUBLIFE,Dirivultidae_juvenile,TM_2023,0
-SUBLIFE,Ecbathyrion_prolixicauda,TM_2023,0
-SUBLIFE,Nilva_torifera,TM_2023,6.31
-SUBLIFE,Rhogobius_sp,TM_2023,5.41
-SUBLIFE,Scotoecetes_introrsus,TM_2023,1.69
-SUBLIFE,Stygiopontius_appositus,TM_2023,0
-SUBLIFE,Stygiopontius_flexus,TM_2023,0
-SUBLIFE,Stygiopontius_hispidulus,TM_2023,11.27
-SUBLIFE,Stygiopontius_mucroniferus,TM_2023,0
-SUBLIFE,Stygiopontius_paxillifer ,TM_2023,0
-SUBLIFE,Stygiopontius_sentifer,TM_2023,0
-SUBLIFE,Stygiopontius_stabilitus,TM_2023,0
+SUBLIFE 1,Aphotopontius_acanthinus,PW_2023,0
+SUBLIFE 1,Aphotopontius_arcuatus,PW_2023,0
+SUBLIFE 1,Aphotopontius_flexispina,PW_2023,0
+SUBLIFE 1,Aphotopontius_hydronauticus ,PW_2023,0
+SUBLIFE 1,Aphotopontius_limatulus,PW_2023,0
+SUBLIFE 1,Aphotopontius_mammilatus,PW_2023,0
+SUBLIFE 1,Aphotopontius_probolus,PW_2023,0
+SUBLIFE 1,Benthoxynus_tumidiseta,PW_2023,0
+SUBLIFE 1,Ceuthocetes_introversus,PW_2023,0
+SUBLIFE 1,Ceuthoecetes_acanthotrix,PW_2023,1.25
+SUBLIFE 1,Ceuthoecetes_aliger,PW_2023,0
+SUBLIFE 1,Ceuthoecetes_Nilva_juvenile,PW_2023,0
+SUBLIFE 1,copepodites,PW_2023,0
+SUBLIFE 1,Dirivultidae_juvenile,PW_2023,0
+SUBLIFE 1,Ecbathyrion_prolixicauda,PW_2023,0
+SUBLIFE 1,Nilva_torifera,PW_2023,0.5
+SUBLIFE 1,Rhogobius_sp,PW_2023,0
+SUBLIFE 1,Scotoecetes_introrsus,PW_2023,0
+SUBLIFE 1,Stygiopontius_appositus,PW_2023,5.25
+SUBLIFE 1,Stygiopontius_flexus,PW_2023,0
+SUBLIFE 1,Stygiopontius_hispidulus,PW_2023,92.42
+SUBLIFE 1,Stygiopontius_mucroniferus,PW_2023,0
+SUBLIFE 1,Stygiopontius_paxillifer ,PW_2023,0
+SUBLIFE 1,Stygiopontius_sentifer,PW_2023,0.58
+SUBLIFE 1,Stygiopontius_stabilitus,PW_2023,0
+SUBLIFE 2,Aphotopontius_acanthinus,TM_2023,2.03
+SUBLIFE 2,Aphotopontius_arcuatus,TM_2023,0.68
+SUBLIFE 2,Aphotopontius_flexispina,TM_2023,0
+SUBLIFE 2,Aphotopontius_hydronauticus ,TM_2023,0
+SUBLIFE 2,Aphotopontius_limatulus,TM_2023,0.66
+SUBLIFE 2,Aphotopontius_mammilatus,TM_2023,32.81
+SUBLIFE 2,Aphotopontius_probolus,TM_2023,0
+SUBLIFE 2,Benthoxynus_tumidiseta,TM_2023,0
+SUBLIFE 2,Ceuthocetes_introversus,TM_2023,0
+SUBLIFE 2,Ceuthoecetes_acanthotrix,TM_2023,36.98
+SUBLIFE 2,Ceuthoecetes_aliger,TM_2023,0
+SUBLIFE 2,Ceuthoecetes_Nilva_juvenile,TM_2023,0
+SUBLIFE 2,copepodites,TM_2023,2.25
+SUBLIFE 2,Dirivultidae_juvenile,TM_2023,0
+SUBLIFE 2,Ecbathyrion_prolixicauda,TM_2023,0
+SUBLIFE 2,Nilva_torifera,TM_2023,6.31
+SUBLIFE 2,Rhogobius_sp,TM_2023,5.41
+SUBLIFE 2,Scotoecetes_introrsus,TM_2023,1.69
+SUBLIFE 2,Stygiopontius_appositus,TM_2023,0
+SUBLIFE 2,Stygiopontius_flexus,TM_2023,0
+SUBLIFE 2,Stygiopontius_hispidulus,TM_2023,11.27
+SUBLIFE 2,Stygiopontius_mucroniferus,TM_2023,0
+SUBLIFE 2,Stygiopontius_paxillifer ,TM_2023,0
+SUBLIFE 2,Stygiopontius_sentifer,TM_2023,0
+SUBLIFE 2,Stygiopontius_stabilitus,TM_2023,0
 Michel's Vent,Aphotopontius_acanthinus,PW_pre,0
 Michel's Vent,Aphotopontius_arcuatus,PW_pre,0
 Michel's Vent,Aphotopontius_flexispina,PW_pre,0
