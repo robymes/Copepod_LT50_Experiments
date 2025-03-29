@@ -5,67 +5,82 @@ library(vegan)      # for NMDS functions
 library(tidyverse)  # for data wrangling and ggplot2
 library(goeveg)     # for NMDS scree plot
 
-# Reproducibility  
-set.seed(1)  
-
-# Create "site1" to "site20"
-site_names <- paste0("site", 1:20) 
-
-# Create "species1" to "species8" and "Pine Forest" and "Oak Forest" 
-species_names <- paste0("species", 1:8) 
-habitat_names <- rep(c("PineForest", "OakForest"), each = 80)  
-
-# Create data frame 
-df <- 
-  data.frame(
-    Site = rep(site_names, each = 8),
-    Species = rep(species_names, times = 1),
-    Habitat = rep(c("PineForest","OakForest"), each = 80))
-
-# Create column of species abundances. Sample counts of 0:51 for the Oak Forest
-# and 0:10 for the Pine Forest and get a unique count for each species at each
-# site using `n()`.
-df <- df %>% 
-  mutate(Abundance = ifelse(
-    Habitat == "PineForest", 
-    ifelse(Species == "species1" | Species == "species5", 0, 
-           sample(0:51, n(), replace = TRUE)),
-    sample(0:10, n(), replace = TRUE)))
-head(df)
-
+#create non pivoted sample data
+create_sample_data_func <- function() {
+  # Reproducibility  
+  set.seed(1)  
+  
+  # Create "site1" to "site20"
+  site_names <- paste0("site", 1:20) 
+  
+  # Create "species1" to "species8" and "Pine Forest" and "Oak Forest" 
+  species_names <- paste0("species", 1:8) 
+  habitat_names <- rep(c("PineForest", "OakForest"), each = 80)  
+  
+  # Create data frame 
+  df <- 
+    data.frame(
+      Site = rep(site_names, each = 8),
+      Species = rep(species_names, times = 1),
+      Habitat = rep(c("PineForest","OakForest"), each = 80))
+  
+  # Create column of species abundances. Sample counts of 0:51 for the Oak Forest
+  # and 0:10 for the Pine Forest and get a unique count for each species at each
+  # site using `n()`.
+  df <- df %>% 
+    mutate(Abundance = ifelse(
+      Habitat == "PineForest", 
+      ifelse(Species == "species1" | Species == "species5", 0, 
+             sample(0:51, n(), replace = TRUE)),
+      sample(0:10, n(), replace = TRUE)))
+  head(df)
+  return(df)
+}
 #-------------------------------------------------------------------------------
 
 # STACKED BAR PLOT
-
-ggplot(df, aes(x = Habitat, y = Abundance, fill = Species)) +
-  geom_bar(position="stack", stat="identity") +
-  theme_classic()
+chart_sample_data_func <- function(df) {
+  ggplot(df, aes(x = Habitat, y = Abundance, fill = Species)) +
+    geom_bar(position="stack", stat="identity") +
+    theme_classic()
+}
 
 #-------------------------------------------------------------------------------
 
 # PIVOT DATA FRAME
-
-com_matrix <- df %>% 
+create_pivoted_data_func <- function(df) {
+  com_matrix <- df %>% 
+    
+    # Turn our Site, Species, and Forest columns into factors 
+    mutate_at(vars(Site), as.factor) %>% 
+    
+    # pivot to wide format
+    pivot_wider(names_from = Species,
+                values_from = Abundance) %>% 
+    
+    # change our column "site" to our rownames
+    column_to_rownames(var = "Site")
   
-  # Turn our Site, Species, and Forest columns into factors 
-  mutate_at(vars(Site), as.factor) %>% 
-  
-  # pivot to wide format
-  pivot_wider(names_from = Species,
-              values_from = Abundance) %>% 
-  
-  # change our column "site" to our rownames
-  column_to_rownames(var = "Site")
-
-head(com_matrix)
+  head(com_matrix)
+  return(com_matrix)
+}
 
 #-------------------------------------------------------------------------------
+
+#df <- create_sample_data_func()
+
+csv_path <- "data/nmds/csv_completed.csv"
+df <- read.csv(csv_path, row.names = NULL, sep=",")
+dissimilarity_method <- "gower"
+
+chart_sample_data_func(df)
+com_matrix <- create_pivoted_data_func(df)
 
 # RUN nMDS ANALYSIS USING BRAY-CURTIS DISTANCE
 
 nmds <-
   metaMDS(com_matrix[,2:9],
-          distance = "bray",
+          distance = dissimilarity_method,
           k = 2)
 
 
@@ -92,7 +107,7 @@ stressplot(nmds)
 # However, the fewer dimensions we use, the easier our data is to interpret
 dimcheck_out <- 
   dimcheckMDS(com_matrix[,2:9],
-              distance = "bray",
+              distance = dissimilarity_method,
               k = 6)
 
 # Look out for number of dimensions after which you get "diminishing returns" in
@@ -199,3 +214,4 @@ ggplot() +
         axis.line = element_line(color = "black"),
         plot.title = element_text(hjust = 0.5),
         legend.key.size = unit(.25, "cm"))
+
