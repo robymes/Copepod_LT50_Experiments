@@ -525,30 +525,30 @@ P Vent 5,Stygiopontius_paxillifer ,TM_post,0
 P Vent 5,Stygiopontius_sentifer,TM_post,0
 P Vent 5,Stygiopontius_stabilitus,TM_post,0
 P Vent 6,Aphotopontius_acanthinus,TM_post,100
-P Vent 7,Aphotopontius_arcuatus,TM_post,0
-P Vent 8,Aphotopontius_flexispina,TM_post,0
-P Vent 9,Aphotopontius_hydronauticus ,TM_post,0
-P Vent 10,Aphotopontius_limatulus,TM_post,0
-P Vent 11,Aphotopontius_mammilatus,TM_post,0
-P Vent 12,Aphotopontius_probolus,TM_post,0
-P Vent 13,Benthoxynus_tumidiseta,TM_post,0
-P Vent 14,Ceuthocetes_introversus,TM_post,0
-P Vent 15,Ceuthoecetes_acanthotrix,TM_post,0
-P Vent 16,Ceuthoecetes_aliger,TM_post,0
-P Vent 17,Ceuthoecetes_Nilva_juvenile,TM_post,0
-P Vent 18,copepodites,TM_post,0
-P Vent 19,Dirivultidae_juvenile,TM_post,0
-P Vent 20,Ecbathyrion_prolixicauda,TM_post,0
-P Vent 21,Nilva_torifera,TM_post,0
-P Vent 22,Rhogobius_sp,TM_post,0
-P Vent 23,Scotoecetes_introrsus,TM_post,0
-P Vent 24,Stygiopontius_appositus,TM_post,0
-P Vent 25,Stygiopontius_flexus,TM_post,0
-P Vent 26,Stygiopontius_hispidulus,TM_post,0
-P Vent 27,Stygiopontius_mucroniferus,TM_post,0
-P Vent 28,Stygiopontius_paxillifer ,TM_post,0
-P Vent 29,Stygiopontius_sentifer,TM_post,0
-P Vent 30,Stygiopontius_stabilitus,TM_post,0
+P Vent 6,Aphotopontius_arcuatus,TM_post,0
+P Vent 6,Aphotopontius_flexispina,TM_post,0
+P Vent 6,Aphotopontius_hydronauticus ,TM_post,0
+P Vent 6,Aphotopontius_limatulus,TM_post,0
+P Vent 6,Aphotopontius_mammilatus,TM_post,0
+P Vent 6,Aphotopontius_probolus,TM_post,0
+P Vent 6,Benthoxynus_tumidiseta,TM_post,0
+P Vent 6,Ceuthocetes_introversus,TM_post,0
+P Vent 6,Ceuthoecetes_acanthotrix,TM_post,0
+P Vent 6,Ceuthoecetes_aliger,TM_post,0
+P Vent 6,Ceuthoecetes_Nilva_juvenile,TM_post,0
+P Vent 6,copepodites,TM_post,0
+P Vent 6,Dirivultidae_juvenile,TM_post,0
+P Vent 6,Ecbathyrion_prolixicauda,TM_post,0
+P Vent 6,Nilva_torifera,TM_post,0
+P Vent 6,Rhogobius_sp,TM_post,0
+P Vent 6,Scotoecetes_introrsus,TM_post,0
+P Vent 6,Stygiopontius_appositus,TM_post,0
+P Vent 6,Stygiopontius_flexus,TM_post,0
+P Vent 6,Stygiopontius_hispidulus,TM_post,0
+P Vent 6,Stygiopontius_mucroniferus,TM_post,0
+P Vent 6,Stygiopontius_paxillifer ,TM_post,0
+P Vent 6,Stygiopontius_sentifer,TM_post,0
+P Vent 6,Stygiopontius_stabilitus,TM_post,0
 Tica 4,Aphotopontius_acanthinus,TM_post,97.5
 Tica 4,Aphotopontius_arcuatus,TM_post,0
 Tica 4,Aphotopontius_flexispina,TM_post,0
