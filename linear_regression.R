@@ -147,12 +147,23 @@ linear_regression_func <- function(dir_path, ld50, time_list, main_title, chart_
   tdt_intercept_minutes <- tdt_results_minutes$coefficients["(Intercept)"]
   cat("TDT intercept in minutes: ", tdt_intercept_minutes, "\n\n")
   
+  # NEW: Verify normality
+  normality_p <- verify_normality(ld50, chart_subtitle)
+  
+  # Save results for later comparisons
+  normality_results <- list(
+    p_value = normality_p,
+    ld50_values = ld50,
+    condition = chart_subtitle
+  )
+  
   # Return comprehensive results for further analysis
   return(list(
     anova_data = anova_data,
     anova_slopes = new_anova_element,
     t_test_data = new_t_test_data,
-    survival_param_z = tdt_slope
+    survival_param_z = tdt_slope,
+    normality_results = normality_results
   ))
 }
 
@@ -255,10 +266,79 @@ t_test_func <- function(t_test_data, main_title) {
     p_value_intercept <- 2 * (1 - pt(abs(t_value_intercept), df_value_intercept))
     
     # Output p-values for both tests
+    t_test_threshold <- 0.05
     cat("P Value slopes: ", p_value_slope, "\n")
-    cat("P Value intercept: ", p_value_intercept, "\n\n")
+    if (p_value_slope < t_test_threshold) {
+      cat("P Value slopes: is statistically significant\n")
+    } else {
+      cat("P Value slopes: is NOT statistically significant\n")
+    }
+    cat("P Value intercept: ", p_value_intercept, "\n")
+    if (p_value_intercept < t_test_threshold) {
+      cat("P Value intercept: is statistically significant\n")
+    } else {
+      cat("P Value intercept: is NOT statistically significant\n")
+    }
+    cat("\n")
   } else {
     # Warn if the t-test cannot be performed due to incorrect number of conditions
     cat("T test cannot be executed with ", length(t_test_data$slope), " samples\n")
   }
+}
+
+# Function to verify normality of LD50 data
+verify_normality <- function(ld50_values, condition_name) {
+  cat("\n### Normality Test for", condition_name, "###\n")
+  
+  # Shapiro-Wilk test (for small samples, n < 50)
+  shapiro_test <- shapiro.test(ld50_values)
+  cat("Shapiro-Wilk test:\n")
+  cat("  W =", shapiro_test$statistic, "\n")
+  cat("  p-value =", shapiro_test$p.value, "\n")
+  cat("  Interpretation:", ifelse(shapiro_test$p.value > 0.05, 
+                                  "Data compatible with normal distribution", 
+                                  "Data NOT normally distributed"), "\n\n")
+  
+  # Q-Q plot for visual assessment
+  qqnorm(ld50_values, main = paste("Q-Q Plot -", condition_name))
+  qqline(ld50_values, col = "red")
+  
+  # Histogram with overlaid normal curve
+  hist(ld50_values, probability = TRUE, 
+       main = paste("LD50 Histogram -", condition_name),
+       xlab = "LD50 (°C)")
+  curve(dnorm(x, mean = mean(ld50_values), sd = sd(ld50_values)), 
+        add = TRUE, col = "blue", lwd = 2)
+  
+  return(shapiro_test$p.value)
+}
+
+# Function to verify homogeneity of variance
+verify_homogeneity <- function(ld50_group1, ld50_group2, 
+                               name_group1, name_group2) {
+  cat("\n### Homogeneity of Variance Test ###\n")
+  
+  # F-test to compare variances
+  f_test <- var.test(ld50_group1, ld50_group2)
+  cat("F-test:\n")
+  cat("  F =", f_test$statistic, "\n")
+  cat("  p-value =", f_test$p.value, "\n")
+  cat("  Interpretation:", ifelse(f_test$p.value > 0.05, 
+                                  "Homogeneous variances", 
+                                  "Non-homogeneous variances"), "\n\n")
+  
+  # Levene's test (more robust to non-normality)
+  library(car)
+  combined_data <- data.frame(
+    ld50 = c(ld50_group1, ld50_group2),
+    group = factor(c(rep(name_group1, length(ld50_group1)),
+                     rep(name_group2, length(ld50_group2))))
+  )
+  
+  levene_test <- leveneTest(ld50 ~ group, data = combined_data)
+  cat("Levene's test:\n")
+  print(levene_test)
+  
+  return(list(f_test = f_test$p.value, 
+              levene_test = levene_test$`Pr(>F)`[1]))
 }
