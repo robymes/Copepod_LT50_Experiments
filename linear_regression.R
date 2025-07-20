@@ -233,12 +233,49 @@ anova_analysis_func <- function(anova_data, anova_slopes, main_title) {
 # Parameters:
 # - t_test_data: Dataframe containing regression statistics from different conditions
 # - main_title: Title for the analysis (used for logging)
-t_test_func <- function(t_test_data, main_title) {
+t_test_func <- function(t_test_data, normality_results_list, main_title) {
   # Display header for t-test results
   cat("########## T TEST ##########\n\n")
   
   # Only perform test if exactly two conditions are being compared
   if (length(t_test_data$slope) == 2) {
+    
+    # NEW: Verify assumptions before t-test
+    cat("############################################\n")
+    cat("### Statistical Assumptions Verification ###\n")
+    cat("############################################\n")
+    
+    # Extract LD50 values from both groups
+    ld50_group1 <- normality_results_list[[1]]$ld50_values
+    ld50_group2 <- normality_results_list[[2]]$ld50_values
+    
+    # Verify variance homogeneity
+    homogeneity_results <- verify_homogeneity(
+      ld50_group1, ld50_group2,
+      normality_results_list[[1]]$condition,
+      normality_results_list[[2]]$condition
+    )
+    
+    # Decision on test type
+    use_welch <- homogeneity_results$levene_test < 0.05
+    
+    if (use_welch) {
+      cat("\n>>> Using Welch's t-test (unequal variances) <<<\n\n")
+    } else {
+      cat("\n>>> Using Student's t-test (equal variances) <<<\n\n")
+    }
+    
+    # If data are not normal, consider alternatives
+    if (any(c(normality_results_list[[1]]$p_value, 
+              normality_results_list[[2]]$p_value) < 0.05)) {
+      cat("\n!!! WARNING: Data not normally distributed !!!\n")
+      cat("Consider using Mann-Whitney U test as alternative:\n\n")
+      
+      # Mann-Whitney U test
+      mw_test <- wilcox.test(ld50_group1, ld50_group2)
+      cat("Mann-Whitney U test p-value:", mw_test$p.value, "\n\n")
+    }
+    
     # Calculate t-statistic for slope comparison using the formula:
     # t = (β₁ - β₂) / sqrt(SE₁² + SE₂²)
     t_value_slope <-
@@ -288,7 +325,9 @@ t_test_func <- function(t_test_data, main_title) {
 
 # Function to verify normality of LD50 data
 verify_normality <- function(ld50_values, condition_name) {
+  cat("###############################################\n")
   cat("\n### Normality Test for", condition_name, "###\n")
+  cat("###############################################\n")
   
   # Shapiro-Wilk test (for small samples, n < 50)
   shapiro_test <- shapiro.test(ld50_values)

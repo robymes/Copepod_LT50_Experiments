@@ -33,6 +33,7 @@ cat("########## EXECUTION FOR: ", main_title, " ##########\n\n")
 anova_data <- data.frame()
 anova_slopes <- data.frame()
 t_test_data <- data.frame()
+normality_results_list <- list()
 k <- 0
 # Iterate over directories
 for (dir_path in dir_paths) {
@@ -55,6 +56,9 @@ for (dir_path in dir_paths) {
   anova_data <- rbind(anova_data, linear_regression_result$anova_data)
   anova_slopes <- rbind(anova_slopes, linear_regression_result$anova_slopes)
   t_test_data <- rbind(t_test_data, linear_regression_result$t_test_data)
+  if (!is.null(linear_regression_result$normality_results)) {
+    normality_results_list[[k]] <- linear_regression_result$normality_results
+  }
 }
 
 anova_analysis_func(
@@ -65,5 +69,6 @@ anova_analysis_func(
 
 t_test_func(
   t_test_data = t_test_data,
+  normality_results_list = normality_results_list,
   main_title = main_title
 )
