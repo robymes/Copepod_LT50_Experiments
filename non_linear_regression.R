@@ -136,7 +136,7 @@ non_linear_regression_dir_func <- function(
   survival_params <- c(0, 0, 0, 0)
   
   # Color palette for distinguishing different exposure times in plots
-  lines_color <- c("green", "red", "blue", "orange", "purple")
+  lines_color <- c("#589E40FF", "#B11016", "#3969ACFF", "#E68E54FF")
   i <- 0
   
   # Container for accumulated data from all files for combined plotting
