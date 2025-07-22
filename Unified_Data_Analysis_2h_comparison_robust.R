@@ -84,41 +84,51 @@ verify_nonlinear_ttest_assumptions <- function(data_path,
   
   cat("\n### 4. PARAMETER ESTIMATES AND UNCERTAINTY ###\n")
   
-  # Extract parameter estimates and standard errors
-  p1_group1 <- model_results_group1$parameters[1, "Estimate"]
-  p1_se_group1 <- model_results_group1$parameters[1, "Std. Error"]
+  # Extract parameter estimates and standard errors for p2 (LD50)
+  p2_group1 <- model_results_group1$parameters[2, "Estimate"]
+  p2_se_group1 <- model_results_group1$parameters[2, "Std. Error"]
   
-  p1_group2 <- model_results_group2$parameters[1, "Estimate"]  
-  p1_se_group2 <- model_results_group2$parameters[1, "Std. Error"]
+  p2_group2 <- model_results_group2$parameters[2, "Estimate"]  
+  p2_se_group2 <- model_results_group2$parameters[2, "Std. Error"]
   
-  cat("Parameter p1 (Maximum Survival):\n")
-  cat("  ", group1_name, ": ", round(p1_group1, 4), "±", round(p1_se_group1, 4), "\n")
-  cat("  ", group2_name, ": ", round(p1_group2, 4), "±", round(p1_se_group2, 4), "\n")
+  cat("Parameter p2 (LD50 - Temperature at 50% Survival):\n")
+  cat("  ", group1_name, ": ", round(p2_group1, 4), "±", round(p2_se_group1, 4), "°C\n")
+  cat("  ", group2_name, ": ", round(p2_group2, 4), "±", round(p2_se_group2, 4), "°C\n")
   
   # Calculate confidence intervals
   df_group1 <- model_results_group1$df
   df_group2 <- model_results_group2$df
   
-  ci_group1 <- p1_group1 + c(-1, 1) * qt(0.975, df_group1) * p1_se_group1
-  ci_group2 <- p1_group2 + c(-1, 1) * qt(0.975, df_group2) * p1_se_group2
+  ci_group1 <- p2_group1 + c(-1, 1) * qt(0.975, df_group1) * p2_se_group1
+  ci_group2 <- p2_group2 + c(-1, 1) * qt(0.975, df_group2) * p2_se_group2
   
-  cat("  95% CI", group1_name, ": [", round(ci_group1[1], 4), ",", round(ci_group1[2], 4), "]\n")
-  cat("  95% CI", group2_name, ": [", round(ci_group2[1], 4), ",", round(ci_group2[2], 4), "]\n\n")
+  cat("  95% CI", group1_name, ": [", round(ci_group1[1], 4), ",", round(ci_group1[2], 4), "] °C\n")
+  cat("  95% CI", group2_name, ": [", round(ci_group2[1], 4), ",", round(ci_group2[2], 4), "] °C\n\n")
   
   cat("### 5. T-TEST ON PARAMETERS (ORIGINAL METHOD) ###\n")
   
-  # Perform the original t-test as in the source code
-  t_statistic <- (p1_group1 - p1_group2) / sqrt(p1_se_group1^2 + p1_se_group2^2)
+  # Perform the original t-test as in the source code (now for p2 - LD50)
+  t_statistic <- (p2_group1 - p2_group2) / sqrt(p2_se_group1^2 + p2_se_group2^2)
   min_df <- min(df_group1, df_group2)
   p_value_original <- 2 * (1 - pt(abs(t_statistic), min_df))
   
-  cat("Original t-test (Welch-Satterthwaite approximation):\n")
+  cat("Original t-test on LD50 (Welch-Satterthwaite approximation):\n")
   cat("  t =", round(t_statistic, 4), "\n")
   cat("  df =", min_df, "\n")
   cat("  p-value =", format(p_value_original, scientific = TRUE), "\n")
-  cat("  Interpretation:", ifelse(p_value_original < 0.05,
-                                  "Statistically significant difference",
-                                  "No statistically significant difference"), "\n\n")
+  
+  # Interpretation considering that higher LD50 = greater heat tolerance
+  if (p_value_original < 0.05) {
+    if (t_statistic > 0) {
+      interpretation <- paste(group1_name, "shows significantly higher thermal tolerance than", group2_name)
+    } else {
+      interpretation <- paste(group2_name, "shows significantly higher thermal tolerance than", group1_name)
+    }
+  } else {
+    interpretation <- "No statistically significant difference in thermal tolerance"
+  }
+  
+  cat("  Interpretation:", interpretation, "\n\n")
   
   cat("### 6. BOOTSTRAP CONFIDENCE INTERVALS ###\n")
   
@@ -128,13 +138,23 @@ verify_nonlinear_ttest_assumptions <- function(data_path,
   )
   
   cat("Bootstrap results (1000 iterations):\n")
-  cat("  Difference in p1 (", group1_name, "-", group2_name, "): ", round(bootstrap_results$difference_mean, 4), "\n")
+  cat("  Difference in LD50 (", group1_name, "-", group2_name, "): ", round(bootstrap_results$difference_mean, 4), "°C\n")
   cat("  95% Bootstrap CI: [", round(bootstrap_results$ci[1], 4), ",", 
-      round(bootstrap_results$ci[2], 4), "]\n")
+      round(bootstrap_results$ci[2], 4), "] °C\n")
   cat("  Bootstrap p-value: ", format(bootstrap_results$p_value, scientific = TRUE), "\n")
-  cat("  Interpretation:", ifelse(bootstrap_results$p_value < 0.05,
-                                  "Statistically significant difference (Bootstrap)",
-                                  "No statistically significant difference (Bootstrap)"), "\n\n")
+  
+  # Interpretation considering that positive difference means group1 has higher thermal tolerance
+  if (bootstrap_results$p_value < 0.05) {
+    if (bootstrap_results$difference_mean > 0) {
+      interpretation <- paste("Statistically significant difference:", group1_name, "shows higher thermal tolerance")
+    } else {
+      interpretation <- paste("Statistically significant difference:", group2_name, "shows higher thermal tolerance")
+    }
+  } else {
+    interpretation <- "No statistically significant difference in thermal tolerance (Bootstrap)"
+  }
+  
+  cat("  Interpretation:", interpretation, "\n\n")
   
   cat("### 7. MODEL COMPARISON AND RECOMMENDATIONS ###\n")
   
@@ -170,7 +190,7 @@ verify_nonlinear_ttest_assumptions <- function(data_path,
     ),
     bootstrap_results = bootstrap_results,
     recommendation = ifelse(residuals_ok_group1 && residuals_ok_group2, 
-                            "parametric", "bootstrap"),
+                           "parametric", "bootstrap"),
     comparison = paste(group1_name, "vs", group2_name)
   ))
 }
@@ -270,8 +290,8 @@ analyze_residuals <- function(model_results, condition_name) {
                                   "Residuals are normally distributed",
                                   "Residuals are NOT normally distributed"), "\n")
   cat("  Homoscedasticity:", ifelse(model_results$residuals_homoscedastic,
-                                    "✓ Constant variance",
-                                    "✗ Non-constant variance"), "\n")
+                                   "✓ Constant variance",
+                                   "✗ Non-constant variance"), "\n")
 }
 
 # Function to perform bootstrap analysis
@@ -300,15 +320,15 @@ perform_bootstrap_analysis <- function(path_group1, path_group2, nls_param_list,
       model1 <- nls(Survival ~ p1 / (1 + (Temperature / p2)^p3),
                     data = boot_data1,
                     start = list(p1 = nls_param_list[[1]][[1]], 
-                                 p2 = nls_param_list[[1]][[2]], 
-                                 p3 = nls_param_list[[1]][[3]]),
+                                p2 = nls_param_list[[1]][[2]], 
+                                p3 = nls_param_list[[1]][[3]]),
                     control = nls.control(maxiter = 200))
       
       model2 <- nls(Survival ~ p1 / (1 + (Temperature / p2)^p3),
                     data = boot_data2,
                     start = list(p1 = nls_param_list[[1]][[1]], 
-                                 p2 = nls_param_list[[1]][[2]], 
-                                 p3 = nls_param_list[[1]][[3]]),
+                                p2 = nls_param_list[[1]][[2]], 
+                                p3 = nls_param_list[[1]][[3]]),
                     control = nls.control(maxiter = 200))
       
       # Return difference in p1 parameters
@@ -420,7 +440,7 @@ create_model_diagnostic_plots <- function(model_group1, model_group2, bootstrap_
   
   # 4. Bootstrap distribution
   bootstrap_plot <- ggplot(data = data.frame(diff = bootstrap_results$differences),
-                           aes(x = diff)) +
+                          aes(x = diff)) +
     geom_histogram(aes(y = ..density..), bins = 30, alpha = 0.7, fill = "skyblue") +
     geom_vline(xintercept = 0, color = "red", linetype = "dashed", size = 1) +
     geom_vline(xintercept = bootstrap_results$ci[1], color = "blue", linetype = "dotted") +
@@ -455,11 +475,11 @@ create_model_diagnostic_plots <- function(model_group1, model_group2, bootstrap_
 # USAGE EXAMPLES:
 
 # Example 2: Pressure comparison (original case)
-data_path <- "data/cruise/t_test/pompeii_worms/anoxic"
+data_path <- "data/cruise/t_test/pompeii_worms/oxic"
 results_pressure <- verify_nonlinear_ttest_assumptions(
   data_path = data_path,
-  file_group1 = "No_Pressure_Data02.csv",
-  file_group2 = "Pressure_Data02.csv",
-  group1_name = "No Pressure", 
-  group2_name = "Pressure"
+  file_group1 = "Pressure_Data02.csv",
+  file_group2 = "No_Pressure_Data02.csv",
+  group1_name = "Pressure", 
+  group2_name = "No Pressure"
 )
