@@ -3,6 +3,11 @@ if (!require("ggplot2")) {
   library(ggplot2)
 }
 
+if (!require("lmtest")) {
+  install.packages("lmtest")
+  library(lmtest)
+}
+
 source("plot_utilities.R")
 
 # Initialize dataframes to store results for ANOVA statistical analysis
@@ -352,12 +357,13 @@ verify_normality <- function(ld50_values, condition_name) {
   return(shapiro_test$p.value)
 }
 
-# Function to verify homogeneity of variance
+# Function to verify homogeneity of variance using Breusch-Pagan test
+# Updated to maintain consistency with wild bootstrap analysis methodology
 verify_homogeneity <- function(ld50_group1, ld50_group2, 
                                name_group1, name_group2) {
   cat("\n### Homogeneity of Variance Test ###\n")
   
-  # F-test to compare variances
+  # F-test to compare variances (kept for compatibility)
   f_test <- var.test(ld50_group1, ld50_group2)
   cat("F-test:\n")
   cat("  F =", f_test$statistic, "\n")
@@ -366,18 +372,33 @@ verify_homogeneity <- function(ld50_group1, ld50_group2,
                                   "Homogeneous variances", 
                                   "Non-homogeneous variances"), "\n\n")
   
-  # Levene's test (more robust to non-normality)
-  library(car)
+  # Breusch-Pagan test (replaces Levene's test for consistency)
+  # Create combined dataset for regression-based heteroscedasticity test
   combined_data <- data.frame(
     ld50 = c(ld50_group1, ld50_group2),
     group = factor(c(rep(name_group1, length(ld50_group1)),
                      rep(name_group2, length(ld50_group2))))
   )
   
-  levene_test <- leveneTest(ld50 ~ group, data = combined_data)
-  cat("Levene's test:\n")
-  print(levene_test)
+  # Fit linear model: LD50 ~ group
+  linear_model <- lm(ld50 ~ group, data = combined_data)
+  
+  # Apply Breusch-Pagan test to residuals
+  if (!require("lmtest", quietly = TRUE)) {
+    install.packages("lmtest")
+    library(lmtest)
+  }
+  
+  bp_test <- lmtest::bptest(linear_model)
+  
+  cat("Breusch-Pagan test:\n")
+  cat("  LM statistic:", round(bp_test$statistic, 4), "\n")
+  cat("  Degrees of freedom:", bp_test$parameter, "\n")
+  cat("  P-value:", format(bp_test$p.value, scientific = TRUE), "\n")
+  cat("  Interpretation:", ifelse(bp_test$p.value > 0.05,
+                                  "Homoscedastic (constant variance)",
+                                  "Heteroscedastic (non-constant variance)"), "\n\n")
   
   return(list(f_test = f_test$p.value, 
-              levene_test = levene_test$`Pr(>F)`[1]))
+              levene_test = bp_test$p.value))  # Keep same return structure
 }

@@ -15,8 +15,8 @@ main_title <- "tdt pompeii worm-tubeworm-intertidal oxic"
 # Directories where to scan for csv data
 dir_paths <- list(
   "data/cruise/tubeworms_mussels/Oxic Pressure",
-  "data/cruise/tubeworms_mussels/Anoxic Pressure"
-  #"data/cruise/pompeii_worms/Oxic Pressure"
+  #"data/cruise/tubeworms_mussels/Anoxic Pressure"
+  "data/cruise/pompeii_worms/Oxic Pressure"
   #"data/nioz/intertidal/Oxic Pressure"
 )
 
